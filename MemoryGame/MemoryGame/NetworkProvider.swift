@@ -11,41 +11,38 @@ import UIKit
 
 
 
-typealias NetworkResult = (AnyObject?, Error?) -> Void
 
-class NetworkClient: NSObject {
-    fileprivate var urlSession: Foundation.URLSession!
-    private var backgroundSession: Foundation.URLSession!
-    static let sharedInstance = NetworkClient()
+
+
+class NetworkProvider: Network {
     
-
-    override init() {
-        let configuration = URLSessionConfiguration.default
-        urlSession = Foundation.URLSession(configuration: configuration)
-        super.init()
-
+    let session: URLSession
+    
+    //MARK: - Lifecycle
+    init(session: URLSession = URLSession.shared) {
+        self.session = session
+        
     }
     
+     // MARK: service methods
     
-    // MARK: service methods
-    
-    func getData(url: NSURL, completion: @escaping NetworkResult) {
+    func makeRequest(request url: NSURL, networkResult:@escaping (AnyObject?, Error?) -> Void) {
         let request = NSURLRequest(url: url as URL)
-        let task = urlSession.dataTask(with: request as URLRequest) { [unowned self] (data, response, error) in
+        let task = self.session.dataTask(with: request as URLRequest) { [unowned self] (data, response, error) in
             guard let data = data else {
                 OperationQueue.main.addOperation {
-                    completion(nil, error)
+                    networkResult(nil, error)
                 }
                 return
             }
-            self.parseJSON(data: data as NSData, completion: completion)
+            self.parseJSON(data: data as NSData, completion: networkResult)
         }
         task.resume()
     }
     
         // MARK: helper methods
     
-    private func parseJSON(data: NSData, completion: @escaping NetworkResult) {
+    private func parseJSON(data: NSData, completion: @escaping (AnyObject?, Error?) -> Void) {
         do {
             let fixedData = fixedJSONData(data as Data)
             let parseResults = try JSONSerialization.jsonObject(with: fixedData, options: [])

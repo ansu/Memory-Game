@@ -20,17 +20,22 @@ class GameVC: BaseVC  {
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var playButton: UIButton!
     
-    var presenter : GameViewModel!
+    fileprivate var viewModel : GameViewModel!
     
     // MARK: - Lifecycle
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black
-        presenter = GameViewModelling()
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        viewModel = GameViewModelling(api: appDelegate.api)
         setupBinding()
-        presenter?.getImages()
+        viewModel?.getImages()
+       // let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+       
     }
     
     
@@ -39,12 +44,12 @@ class GameVC: BaseVC  {
         self.collectionView.isHidden = false
         self.playButton.isHidden = true
         self.timerLabel.isHidden = false
-        presenter?.getImages()
+        viewModel?.getImages()
     }
     
     func setupBinding(){
        
-        presenter?.isLoading.bindAndFire({
+        viewModel?.isLoading.bindAndFire({
             if ($0){
                 self.showActivityIndicator()
             }else{
@@ -52,38 +57,38 @@ class GameVC: BaseVC  {
             }
         })
       
-        presenter?.didError  = { [weak self] error in
+        viewModel?.didError  = { [weak self] error in
             self?.viewModelDidError(error: error)
         }
 
-        presenter?.didUpdate = { _ in
+        viewModel?.didUpdate = { _ in
             self.collectionView.reloadData()
         }
         
-        presenter?.startGame = { [weak self] _ in
+        viewModel?.startGame = { [weak self] _ in
             self?.bottomImageView.isHidden = false
             self?.timerLabel.isHidden = true
             
 
         }
-        presenter?.showBottomCard = { [weak self] card in
+        viewModel?.showBottomCard = { [weak self] card in
             let imageUrl = card.photoUrl!
             self?.bottomImageView.kf.setImage(with:imageUrl)
             
         }
         
-        presenter?.showCard = { [weak self] cellIndex in
+        viewModel?.showCard = { [weak self] cellIndex in
             let indexPath = NSIndexPath(row: cellIndex, section: 0)
             let cell = self?.collectionView.cellForItem(at: indexPath as IndexPath) as! CardCollectionViewCell
-            cell.card = self?.presenter.cards[cellIndex]
+            cell.card = self?.viewModel.cards[cellIndex]
         }
         
-        presenter?.showToast = { [weak self] toastMsg in
+        viewModel?.showToast = { [weak self] toastMsg in
             self?.view.makeToast(toastMsg, duration: 1, position: ToastPosition.bottom)
 
         }
         
-        presenter?.finishGame = { [weak self] toastMsg in
+        viewModel?.finishGame = { [weak self] toastMsg in
             self?.bottomImageView.isHidden = true
             self?.collectionView.isHidden = true
             self?.playButton.isHidden = false
@@ -91,7 +96,7 @@ class GameVC: BaseVC  {
             
         }
         
-        presenter?.elapsedTime.bindAndFire({ elapsedTime in
+        viewModel?.elapsedTime.bindAndFire({ elapsedTime in
             self.timerLabel.text = elapsedTime
         })
     }
@@ -112,12 +117,12 @@ extension GameVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return presenter.cards.count
+        return viewModel.cards.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cardCell1", for: indexPath) as! CardCollectionViewCell
-        let card = presenter.cards[indexPath.row]
+        let card = viewModel.cards[indexPath.row]
         cell.card = card
         
         return cell
@@ -135,7 +140,7 @@ extension GameVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 
 extension GameVC : UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        presenter.didSelectCard(cellIndex: indexPath.row)
+        viewModel.didSelectCard(cellIndex: indexPath.row)
    }
 
 }

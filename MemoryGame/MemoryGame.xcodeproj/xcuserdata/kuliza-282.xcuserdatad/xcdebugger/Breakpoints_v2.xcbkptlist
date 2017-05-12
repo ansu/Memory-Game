@@ -10,13 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemoryGame/Photo+Services.swift"
-            timestampString = "516273220.976721"
+            timestampString = "516288769.491514"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "getAllFeedPhotos(completion:)"
-            landmarkType = "7">
+            startingLineNumber = "30"
+            endingLineNumber = "30">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -26,13 +24,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemoryGame/Photo+Services.swift"
-            timestampString = "516273220.976721"
+            timestampString = "516288769.491514"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "getAllFeedPhotos(completion:)"
-            landmarkType = "7">
+            startingLineNumber = "35"
+            endingLineNumber = "35">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -90,13 +86,45 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemoryGame/GameVC.swift"
-            timestampString = "516283494.45398"
+            timestampString = "516296301.388805"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
-            landmarkName = "viewModelDidError(error:)"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "setupBinding()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MemoryGame.GameVC.setupBinding () -&gt; ()"
+                  moduleName = "MemoryGame"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kuliza-282/Desktop/assign/Memory-Game/MemoryGame/MemoryGame/GameVC.swift"
+                  timestampString = "516295224.564496"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "102"
+                  endingLineNumber = "102"
+                  offsetFromSymbolStart = "4885">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MemoryGame.GameVC.(setupBinding () -&gt; ()).(closure #9)"
+                  moduleName = "MemoryGame"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kuliza-282/Desktop/assign/Memory-Game/MemoryGame/MemoryGame/GameVC.swift"
+                  timestampString = "516295224.567066"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "102"
+                  endingLineNumber = "102"
+                  offsetFromSymbolStart = "265">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

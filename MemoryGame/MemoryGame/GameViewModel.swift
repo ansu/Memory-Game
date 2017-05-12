@@ -43,6 +43,10 @@ class GameViewModelling: NSObject, GameViewModel {
     private var timer:Timer?
     private var hiddenCards:[Card] = [Card]()
     private var  correctCardsCount = 0
+    
+    private let api: API
+
+   
     var didError: ((Error) -> Void)?
     var didUpdate: (() -> Void)?
     var showBottomCard:((Card) -> Void)?
@@ -51,10 +55,13 @@ class GameViewModelling: NSObject, GameViewModel {
     var finishGame:((String) -> Void)?
     var startGame:(() ->Void)?
 
+    init(api:API) {
+        self.api = api
+    }
  
     func getImages() {
         isLoading.value = true
-        Card.getAllFeedPhotos { [weak self] (photos, error) in
+        self.api.getAllFeedPhotos { [weak self] (photos, error) in
             self?.isLoading.value = false
             guard error == nil else {
                 self?.didError?(error!)
@@ -63,13 +70,12 @@ class GameViewModelling: NSObject, GameViewModel {
             self?.cards = photos!
             self?.didUpdate!()
             self?.startTime = NSDate.init()
-            self?.timer = Timer.scheduledTimer(timeInterval: 1, target: self!, selector: #selector(GameViewModelling.mySelector), userInfo: nil, repeats: true)
-            
+            self?.timer = Timer.scheduledTimer(timeInterval: 1, target: self!, selector: #selector(GameViewModelling.elapsedTimer), userInfo: nil, repeats: true)
             }
      
         }
     
-    func mySelector(){
+    func elapsedTimer(){
         let time = String(format:"%.0f",NSDate().timeIntervalSince(startTime! as Date))
         elapsedTime.value = String(format:"TIMER: --- %@",time)
         
@@ -79,7 +85,11 @@ class GameViewModelling: NSObject, GameViewModel {
                 timer = nil
             }
             self.hideAllCards()
-            
+            self.didUpdate!()
+            self.startGame!()
+            self.generateRandomCard()
+            self.showBottomCard!(self.activeCard!)
+
             
         }
     }
@@ -90,16 +100,6 @@ class GameViewModelling: NSObject, GameViewModel {
                  card.shown = false
                  return card
         }
-        for i in 0...cards.count - 1{
-            print(cards[i].id)
-            print(hiddenCards[i].id)
-
-        }
-        self.didUpdate!()
-        self.startGame!()
-        self.showRandomCard()
-        self.showBottomCard!(self.activeCard!)
-
     }
 
     func didSelectCard(cellIndex:Int) {
@@ -113,7 +113,7 @@ class GameViewModelling: NSObject, GameViewModel {
                 self.finishGame!(DisplayStrings.MemoryGame.FINISHED)
                 return
             }
-            self.showRandomCard()
+            self.generateRandomCard()
             self.showBottomCard!(self.activeCard!)
 
             
@@ -129,11 +129,9 @@ class GameViewModelling: NSObject, GameViewModel {
         hiddenCards.removeAll()
         correctCardsCount = 0
     }
-    private func showRandomCard() {
-        print("hidden  count:\(hiddenCards.count)")
+    private func generateRandomCard() {
         if hiddenCards.count > 0 {
             let arrayKey = Int(arc4random_uniform(UInt32(hiddenCards.count)))
-            print("array key:\(arrayKey)")
             self.activeCard = hiddenCards[arrayKey]
             hiddenCards.remove(at: arrayKey)
         }
