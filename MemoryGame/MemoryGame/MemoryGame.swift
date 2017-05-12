@@ -11,134 +11,119 @@ import Foundation
 import Foundation
 import UIKit.UIImage
 
-// MARK: - MemoryGameDelegate
 
-protocol MemoryGameDelegate {
-    func memoryGameDidStart(game: MemoryGame)
-    func memoryGame(game: MemoryGame, showCard cards: Card)
-    func memoryGame(game: MemoryGame, showBottomCard cards: Card)
-    func memoryGameDidEnd(game: MemoryGame, elapsedTime: NSTimeInterval)
+
+protocol GamePresenter {
+    func startGame()
+    func stopGame()
+    func didSelectCard(cellIndex:Int)
+    func getImages()
+    var isLoading : Dynamic<Bool> { get }
+    var cards:[Card] { get }
+    
+   
+    //MARK: - Events
+    var didError: ((Error) -> Void)? { get set }
+    var didUpdate: (() -> Void)? { get set }
+    var showBottomCard:((Card) -> Void)? { get set }
+
+    //var hideCards:(()->Void)? { get set }
+
 }
 
-// MARK: - MemoryGame
 
-class MemoryGame {
+class GamePresenterImpl: NSObject, GamePresenter {
     
-    // MARK: - Properties
-    
-    static var defaultCardImages:[UIImage] = [
-        UIImage(named: "brand1")!,
-        UIImage(named: "brand2")!,
-        UIImage(named: "brand3")!,
-        UIImage(named: "brand4")!,
-        UIImage(named: "brand5")!,
-        UIImage(named: "brand6")!,
-        UIImage(named: "brand6")!,
-        UIImage(named: "brand6")!,
-        UIImage(named: "brand6")!
-    ];
-    
-    var nums = [0,1,2,3,4,5,6,7,8]
-    
-    var cards:[Card] = [Card]()
-    var delegate: MemoryGameDelegate?
-    var isPlaying: Bool = false
-    
-    private var cardsShown:[Card] = [Card]()
+    private(set) var cards :[Card] = [Card]()
+    private(set) var isLoading : Dynamic<Bool> = Dynamic(false)
+    var didError: ((Error) -> Void)?
+    var didUpdate: (() -> Void)?
+    var showBottomCard:((Card) -> Void)?
+    private var activeCard:Card?
     private var startTime:NSDate?
-    
-    var numberOfCards: Int {
-        get {
-            return cards.count
-        }
+    private var timer:Timer?
+    private var nums = [0,1,2,3,4,5,6,7,8]
+
+
+    func startGame() {
+        //print
+        startTime = NSDate.init()
+    }
+    func stopGame() {
+        
     }
     
-    var elapsedTime : NSTimeInterval {
+    var elapsedTime : TimeInterval {
         get {
             guard startTime != nil else {
                 return -1
             }
-            return NSDate().timeIntervalSinceDate(startTime!)
+            return NSDate().timeIntervalSince(startTime! as Date)
         }
     }
     
-    // MARK: - Methods
+    func getImages() {
+        isLoading.value = true
+        Card.getAllFeedPhotos { [weak self] (photos, error) in
+            self?.isLoading.value = false
+            guard error == nil else {
+                self?.didError?(error!)
+                return
+            }
+            self?.cards = photos!
+            self?.didUpdate!()
+            self?.startTime = NSDate.init()
+            self?.timer = Timer.scheduledTimer(timeInterval: 1, target: self!, selector: #selector(GamePresenterImpl.mySelector), userInfo: nil, repeats: true)
+            
+            }
+     
+        }
     
-    func newGame(cardsData:[UIImage]) {
-        cards = randomCards(cardsData)
-        startTime = NSDate.init()
-        isPlaying = true
-        delegate?.memoryGameDidStart(self)
+    func mySelector(){
+        let seconds = String(format:"%.0f",self.elapsedTime)
+        if seconds == "5" {
+            if timer?.isValid == true {
+                timer?.invalidate()
+                timer = nil
+            }
+            self.hideAllCards()
+            
+        }
     }
     
-    func stopGame() {
-        //        isPlaying = false
-        //        cards.removeAll()
-        //        cardsShown.removeAll()
-        startTime = nil
+    private func hideAllCards(){
+        cards = cards.map{ (card:Card) -> Card in
+                 card.shown = false
+                 return card
+        }
+        for i in 0...cards.count-1 {
+            print(cards[i].shown)
+        }
+        self.didUpdate!()
+        self.activeCard = self.showRandomCard()
+        self.showBottomCard!(self.activeCard!)
+
     }
-    
-    func didSelectCard(card: Card?, activeCard:Card) {
-        guard let card = card else { return }
+
+    func didSelectCard(cellIndex:Int) {
         
-        
-        if activeCard.equals(card){
+        print("index \(cellIndex)")
+        if (activeCard?.equals(card: cards[cellIndex]))!{
             print("Done")
-            cardsShown.append(card)
-            delegate?.memoryGame(self, showCard: card)
-            if cardsShown.count == cards.count {
-                print("finished")
-                finishGame()
-            }else{
-                print("calling")
-                delegate?.memoryGame(self, showBottomCard: showRandomCard())
-            }
         }else{
-            // print("sorry")
+            print("sorry")
         }
+        
         
     }
     
-    func cardAtIndex(index: Int) -> Card? {
-        if cards.count > index {
-            return cards[index]
-        } else {
-            return nil
-        }
-    }
-    
-    func indexForCard(card: Card) -> Int? {
-        for index in 0...cards.count-1 {
-            if card === cards[index] {
-                return index
-            }
-        }
-        return nil
-    }
-    
-    private func finishGame() {
-        isPlaying = false
-        delegate?.memoryGameDidEnd(self, elapsedTime: elapsedTime)
-    }
-    
-    
-    private func randomCards(cardsData:[UIImage]) -> [Card] {
-        var cards = [Card]()
-        for i in 0...cardsData.count-1 {
-            let card = Card.init(image: cardsData[i])
-            cards.append(card)
-        }
-        cards.shuffle()
-        return cards
-    }
-    
-    func showRandomCard() -> Card{
-        
+    private func showRandomCard() -> Card{
         let arrayKey = Int(arc4random_uniform(UInt32(nums.count)))
         let randNum = nums[arrayKey]
-        nums.removeAtIndex(arrayKey)
+        nums.remove(at: arrayKey)
         print(randNum)
         return cards[randNum]
     }
-    
+
 }
+

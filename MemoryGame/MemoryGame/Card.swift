@@ -10,33 +10,37 @@
 import Foundation
 import UIKit.UIImage
 
+
+
 class Card : CustomStringConvertible {
     
     // MARK: - Properties
     
     var id:NSUUID = NSUUID.init()
-    var shown:Bool = false
-    var image:UIImage
+    var shown:Bool = true
+    var photoUrl: URL?
+    
     
     // MARK: - Lifecycle
     
-    init(image:UIImage) {
-        self.image = image
-    }
-    
-    init(card:Card) {
-        self.id = card.id.copy() as! NSUUID
-        self.shown = card.shown
-        self.image = card.image.copy() as! UIImage
+    init(dictionary values: NSDictionary) {
+        
+        guard let media = values["media"] as? NSDictionary,
+            let urlString = media["m"] as? String, let url = URL(string: urlString) else {
+                fatalError("Photo item could not be created: " + values.description)
+        }
+        photoUrl = url
+        
     }
     
     // MARK: - Methods
     
     var description: String {
-        return "\(id.UUIDString)"
+        return "\(id.uuidString)"
     }
     
     func equals(card: Card) -> Bool {
         return card.id.isEqual(id)
     }
 }
+

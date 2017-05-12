@@ -10,20 +10,21 @@
 import UIKit.UIImage
 
 extension UIImage {
-    static func downloadImage(url: NSURL, completion: ((UIImage?) -> Void)?) {
-        
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0)) {
-            var image: UIImage? = nil
-            
-            defer {
-                dispatch_async(dispatch_get_main_queue()) {
-                    completion?(image)
-                }
-            }
-            
-            if let data = NSData(contentsOfURL: url) {
-                image = UIImage(data: data)
-            }
-        }
-    }
+//    static func downloadImage(url: NSURL, completion: ((UIImage?) -> Void)?) {
+//        
+//        
+//        dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0).asynchronously(DispatchQueue.global) {
+//            var image: UIImage? = nil
+//            
+//            defer {
+//                dispatch_get_main_queue().asynchronously(DispatchQueue.main) {
+//                    completion?(image)
+//                }
+//            }
+//            
+//            if let data = NSData(contentsOfURL: url as URL) {
+//                image = UIImage(data: data)
+//            }
+//        }
+//    }
 }
