@@ -42,7 +42,7 @@ extension Card {
                 var photos = [Card]()
                 var count = 0
                 for item in items {
-                    if (count == 9){
+                    if (count == AppConstants.totalNumberOfCards){
                         break;
                     }
                     photos.append(Card(dictionary: item))

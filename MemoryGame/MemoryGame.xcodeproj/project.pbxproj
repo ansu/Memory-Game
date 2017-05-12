@@ -29,6 +29,7 @@
 		884E2D431EC43E2A003D9D2A /* Photo+Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884E2D421EC43E2A003D9D2A /* Photo+Services.swift */; };
 		884E2D471EC53DC4003D9D2A /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884E2D461EC53DC3003D9D2A /* Dynamic.swift */; };
 		884E2D491EC54766003D9D2A /* ErrorType+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884E2D481EC54766003D9D2A /* ErrorType+Extensions.swift */; };
+		88AAE42E1EC5DAB40019ABC6 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AAE42D1EC5DAB40019ABC6 /* AppConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		884E2D421EC43E2A003D9D2A /* Photo+Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Photo+Services.swift"; sourceTree = "<group>"; };
 		884E2D461EC53DC3003D9D2A /* Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
 		884E2D481EC54766003D9D2A /* ErrorType+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ErrorType+Extensions.swift"; sourceTree = "<group>"; };
+		88AAE42D1EC5DAB40019ABC6 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		BB23CC38874086E35188C5F9 /* Pods_MemoryGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemoryGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC6ABA7A8C83AE474C04EA9B /* Pods_MemoryGameTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemoryGameTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2AF8CF1C963CFDFC1E4438A /* Pods-MemoryGameUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoryGameUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MemoryGameUITests/Pods-MemoryGameUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 		884E2D001EC410C0003D9D2A /* MemoryGame */ = {
 			isa = PBXGroup;
 			children = (
+				88AAE42C1EC5DAA40019ABC6 /* Constants */,
 				8815274C1EC5C6F800E52B3B /* UI */,
 				884E2D341EC41198003D9D2A /* Extensions */,
 				881527401EC5B37F00E52B3B /* Localization */,
@@ -253,6 +256,14 @@
 				8815273E1EC5B27E00E52B3B /* APIUrls.swift */,
 			);
 			name = Services;
+			sourceTree = "<group>";
+		};
+		88AAE42C1EC5DAA40019ABC6 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				88AAE42D1EC5DAB40019ABC6 /* AppConstants.swift */,
+			);
+			name = Constants;
 			sourceTree = "<group>";
 		};
 		8C7FC8530D6B96A666A02D49 /* Frameworks */ = {
@@ -558,6 +569,7 @@
 				8815274B1EC5C1BD00E52B3B /* BaseVC.swift in Sources */,
 				884E2D471EC53DC4003D9D2A /* Dynamic.swift in Sources */,
 				884E2D311EC4115E003D9D2A /* Card.swift in Sources */,
+				88AAE42E1EC5DAB40019ABC6 /* AppConstants.swift in Sources */,
 				884E2D411EC43E09003D9D2A /* NetworkClient.swift in Sources */,
 				884E2D431EC43E2A003D9D2A /* Photo+Services.swift in Sources */,
 			);

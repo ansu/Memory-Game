@@ -33,11 +33,12 @@ class GameVC: BaseVC  {
         presenter?.getImages()
     }
     
+    
+    
      @IBAction func didPressPlayButton() {
         self.collectionView.isHidden = false
         self.playButton.isHidden = true
         self.timerLabel.isHidden = false
-
         presenter?.getImages()
     }
     

@@ -12,7 +12,7 @@ import UIKit.UIImage
 
 
 
-class Card : CustomStringConvertible {
+final class Card : CustomStringConvertible, Copying {
     
     // MARK: - Properties
     
@@ -34,6 +34,12 @@ class Card : CustomStringConvertible {
     }
     
     // MARK: - Methods
+    
+    required init(original: Card) {
+        id = original.id
+        shown = original.shown
+        photoUrl = original.photoUrl
+    }
     
     var description: String {
         return "\(id.uuidString)"
