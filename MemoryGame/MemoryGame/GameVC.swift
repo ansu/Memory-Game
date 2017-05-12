@@ -11,7 +11,7 @@ import UIKit
 import Kingfisher
 import Toast_Swift
 
-class GameVC: UIViewController  {
+class GameVC: BaseVC  {
     
     // MARK: Properties
     
@@ -37,9 +37,9 @@ class GameVC: UIViewController  {
        
         presenter?.isLoading.bindAndFire({
             if ($0){
-                print("show loader")
+                self.showActivityIndicator()
             }else{
-                print("hide loader")
+                self.hideActivityIndicator()
             }
         })
       

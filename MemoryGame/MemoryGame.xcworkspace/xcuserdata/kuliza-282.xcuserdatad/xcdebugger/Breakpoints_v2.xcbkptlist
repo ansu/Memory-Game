@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemoryGame/GameVC.swift"
-            timestampString = "516271734.164216"
+            timestampString = "516277100.162754"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "setupBinding()"
             landmarkType = "7">
          </BreakpointContent>

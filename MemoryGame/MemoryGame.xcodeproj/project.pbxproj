@@ -13,6 +13,7 @@
 		8815273F1EC5B27E00E52B3B /* APIUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815273E1EC5B27E00E52B3B /* APIUrls.swift */; };
 		881527441EC5B45500E52B3B /* DisplayStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881527431EC5B45500E52B3B /* DisplayStrings.swift */; };
 		881527471EC5B6A300E52B3B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 881527491EC5B6A300E52B3B /* Localizable.strings */; };
+		8815274B1EC5C1BD00E52B3B /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815274A1EC5C1BD00E52B3B /* BaseVC.swift */; };
 		884E2D021EC410C0003D9D2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884E2D011EC410C0003D9D2A /* AppDelegate.swift */; };
 		884E2D071EC410C0003D9D2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 884E2D051EC410C0003D9D2A /* Main.storyboard */; };
 		884E2D091EC410C0003D9D2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 884E2D081EC410C0003D9D2A /* Assets.xcassets */; };
@@ -56,6 +57,7 @@
 		8815273E1EC5B27E00E52B3B /* APIUrls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIUrls.swift; sourceTree = "<group>"; };
 		881527431EC5B45500E52B3B /* DisplayStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayStrings.swift; sourceTree = "<group>"; };
 		881527481EC5B6A300E52B3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8815274A1EC5C1BD00E52B3B /* BaseVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		884E2CFE1EC410C0003D9D2A /* MemoryGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoryGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		884E2D011EC410C0003D9D2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		884E2D061EC410C0003D9D2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -166,18 +168,19 @@
 		884E2D001EC410C0003D9D2A /* MemoryGame */ = {
 			isa = PBXGroup;
 			children = (
+				884E2D341EC41198003D9D2A /* Extensions */,
 				881527401EC5B37F00E52B3B /* Localization */,
 				882D7C791EC58E1C00CC7AF2 /* ViewModel */,
 				884E2D3F1EC43DF7003D9D2A /* Services */,
 				884E2D3E1EC4126C003D9D2A /* Controller */,
 				884E2D391EC411F2003D9D2A /* View */,
-				884E2D341EC41198003D9D2A /* Extensions */,
 				884E2D2F1EC41152003D9D2A /* Model */,
 				884E2D011EC410C0003D9D2A /* AppDelegate.swift */,
 				884E2D051EC410C0003D9D2A /* Main.storyboard */,
 				884E2D081EC410C0003D9D2A /* Assets.xcassets */,
 				884E2D0A1EC410C0003D9D2A /* LaunchScreen.storyboard */,
 				884E2D0D1EC410C0003D9D2A /* Info.plist */,
+				8815274A1EC5C1BD00E52B3B /* BaseVC.swift */,
 			);
 			path = MemoryGame;
 			sourceTree = "<group>";
@@ -544,6 +547,7 @@
 				884E2D3D1EC4123A003D9D2A /* GameVC.swift in Sources */,
 				8815273F1EC5B27E00E52B3B /* APIUrls.swift in Sources */,
 				884E2D3B1EC41216003D9D2A /* CardCollectionViewCell.swift in Sources */,
+				8815274B1EC5C1BD00E52B3B /* BaseVC.swift in Sources */,
 				884E2D471EC53DC4003D9D2A /* Dynamic.swift in Sources */,
 				884E2D311EC4115E003D9D2A /* Card.swift in Sources */,
 				884E2D411EC43E09003D9D2A /* NetworkClient.swift in Sources */,
