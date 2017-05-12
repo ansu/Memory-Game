@@ -104,9 +104,6 @@ class GamePresenterImpl: NSObject, GamePresenter {
                  card.shown = false
                  return card
         }
-        for i in 0...cards.count-1 {
-            print(cards[i].shown)
-        }
         self.didUpdate!()
         self.activeCard = self.showRandomCard()
         self.showBottomCard!(self.activeCard!)
@@ -122,7 +119,7 @@ class GamePresenterImpl: NSObject, GamePresenter {
             cardsShown.append(cards[cellIndex])
             self.showCard!(cellIndex)
             if cardsShown.count == cards.count {
-                self.finishGame!("Finished")
+                self.finishGame!(DisplayStrings.MemoryGame.FINISHED)
                 return
             }
             self.activeCard = self.showRandomCard()
@@ -130,7 +127,7 @@ class GamePresenterImpl: NSObject, GamePresenter {
 
             
         }else{
-            self.showToast!("Wrong Tap")
+            self.showToast!(DisplayStrings.MemoryGame.FINISHED)
         }
         
         
@@ -140,7 +137,6 @@ class GamePresenterImpl: NSObject, GamePresenter {
         let arrayKey = Int(arc4random_uniform(UInt32(nums.count)))
         let randNum = nums[arrayKey]
         nums.remove(at: arrayKey)
-        print(randNum)
         return cards[randNum]
     }
 

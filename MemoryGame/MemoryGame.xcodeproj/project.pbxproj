@@ -10,6 +10,9 @@
 		110C703D0141A70769A4C169 /* Pods_MemoryGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB23CC38874086E35188C5F9 /* Pods_MemoryGame.framework */; };
 		5049C521AB9AF7767DEA577D /* Pods_MemoryGameTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC6ABA7A8C83AE474C04EA9B /* Pods_MemoryGameTests.framework */; };
 		60CEB18C288DDBA860EBC0A2 /* Pods_MemoryGameUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FAA1691884B16C0163F54A /* Pods_MemoryGameUITests.framework */; };
+		8815273F1EC5B27E00E52B3B /* APIUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815273E1EC5B27E00E52B3B /* APIUrls.swift */; };
+		881527441EC5B45500E52B3B /* DisplayStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881527431EC5B45500E52B3B /* DisplayStrings.swift */; };
+		881527471EC5B6A300E52B3B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 881527491EC5B6A300E52B3B /* Localizable.strings */; };
 		884E2D021EC410C0003D9D2A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884E2D011EC410C0003D9D2A /* AppDelegate.swift */; };
 		884E2D071EC410C0003D9D2A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 884E2D051EC410C0003D9D2A /* Main.storyboard */; };
 		884E2D091EC410C0003D9D2A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 884E2D081EC410C0003D9D2A /* Assets.xcassets */; };
@@ -19,17 +22,12 @@
 		884E2D311EC4115E003D9D2A /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884E2D301EC4115E003D9D2A /* Card.swift */; };
 		884E2D331EC41176003D9D2A /* MemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884E2D321EC41176003D9D2A /* MemoryGame.swift */; };
 		884E2D361EC411B4003D9D2A /* Array+Shuffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884E2D351EC411B4003D9D2A /* Array+Shuffle.swift */; };
-		884E2D381EC411C3003D9D2A /* UIImage+Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884E2D371EC411C3003D9D2A /* UIImage+Downloader.swift */; };
 		884E2D3B1EC41216003D9D2A /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884E2D3A1EC41216003D9D2A /* CardCollectionViewCell.swift */; };
 		884E2D3D1EC4123A003D9D2A /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884E2D3C1EC4123A003D9D2A /* GameVC.swift */; };
 		884E2D411EC43E09003D9D2A /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884E2D401EC43E09003D9D2A /* NetworkClient.swift */; };
 		884E2D431EC43E2A003D9D2A /* Photo+Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884E2D421EC43E2A003D9D2A /* Photo+Services.swift */; };
-		884E2D451EC43E8C003D9D2A /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884E2D441EC43E8C003D9D2A /* Photo.swift */; };
 		884E2D471EC53DC4003D9D2A /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884E2D461EC53DC3003D9D2A /* Dynamic.swift */; };
 		884E2D491EC54766003D9D2A /* ErrorType+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884E2D481EC54766003D9D2A /* ErrorType+Extensions.swift */; };
-		884E2D571EC5517B003D9D2A /* CardCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884E2D561EC5517B003D9D2A /* CardCellViewModel.swift */; };
-		884E2D5B1EC55337003D9D2A /* CellRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884E2D591EC55337003D9D2A /* CellRepresentable.swift */; };
-		884E2D5C1EC55337003D9D2A /* CellIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884E2D5A1EC55337003D9D2A /* CellIdentifiable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +53,9 @@
 		3F21122CFC331418F5A81D74 /* Pods-MemoryGameUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoryGameUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MemoryGameUITests/Pods-MemoryGameUITests.release.xcconfig"; sourceTree = "<group>"; };
 		5F86D5AF98E67B515004BEAC /* Pods-MemoryGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoryGame.release.xcconfig"; path = "Pods/Target Support Files/Pods-MemoryGame/Pods-MemoryGame.release.xcconfig"; sourceTree = "<group>"; };
 		609D58C846DB037E6B9BAB73 /* Pods-MemoryGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoryGame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MemoryGame/Pods-MemoryGame.debug.xcconfig"; sourceTree = "<group>"; };
+		8815273E1EC5B27E00E52B3B /* APIUrls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIUrls.swift; sourceTree = "<group>"; };
+		881527431EC5B45500E52B3B /* DisplayStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayStrings.swift; sourceTree = "<group>"; };
+		881527481EC5B6A300E52B3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		884E2CFE1EC410C0003D9D2A /* MemoryGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MemoryGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		884E2D011EC410C0003D9D2A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		884E2D061EC410C0003D9D2A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -70,17 +71,12 @@
 		884E2D301EC4115E003D9D2A /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 		884E2D321EC41176003D9D2A /* MemoryGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryGame.swift; sourceTree = "<group>"; };
 		884E2D351EC411B4003D9D2A /* Array+Shuffle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Shuffle.swift"; sourceTree = "<group>"; };
-		884E2D371EC411C3003D9D2A /* UIImage+Downloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Downloader.swift"; sourceTree = "<group>"; };
 		884E2D3A1EC41216003D9D2A /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		884E2D3C1EC4123A003D9D2A /* GameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameVC.swift; sourceTree = "<group>"; };
 		884E2D401EC43E09003D9D2A /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		884E2D421EC43E2A003D9D2A /* Photo+Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Photo+Services.swift"; sourceTree = "<group>"; };
-		884E2D441EC43E8C003D9D2A /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		884E2D461EC53DC3003D9D2A /* Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
 		884E2D481EC54766003D9D2A /* ErrorType+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ErrorType+Extensions.swift"; sourceTree = "<group>"; };
-		884E2D561EC5517B003D9D2A /* CardCellViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCellViewModel.swift; sourceTree = "<group>"; };
-		884E2D591EC55337003D9D2A /* CellRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellRepresentable.swift; sourceTree = "<group>"; };
-		884E2D5A1EC55337003D9D2A /* CellIdentifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellIdentifiable.swift; sourceTree = "<group>"; };
 		BB23CC38874086E35188C5F9 /* Pods_MemoryGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemoryGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC6ABA7A8C83AE474C04EA9B /* Pods_MemoryGameTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemoryGameTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2AF8CF1C963CFDFC1E4438A /* Pods-MemoryGameUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoryGameUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MemoryGameUITests/Pods-MemoryGameUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -128,6 +124,13 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		881527401EC5B37F00E52B3B /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Localization;
+			sourceTree = "<group>";
+		};
 		882D7C791EC58E1C00CC7AF2 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,8 +164,10 @@
 		884E2D001EC410C0003D9D2A /* MemoryGame */ = {
 			isa = PBXGroup;
 			children = (
+				881527491EC5B6A300E52B3B /* Localizable.strings */,
+				881527431EC5B45500E52B3B /* DisplayStrings.swift */,
+				881527401EC5B37F00E52B3B /* Localization */,
 				882D7C791EC58E1C00CC7AF2 /* ViewModel */,
-				884E2D581EC55328003D9D2A /* Protocols */,
 				884E2D3F1EC43DF7003D9D2A /* Services */,
 				884E2D3E1EC4126C003D9D2A /* Controller */,
 				884E2D391EC411F2003D9D2A /* View */,
@@ -199,7 +204,6 @@
 			isa = PBXGroup;
 			children = (
 				884E2D301EC4115E003D9D2A /* Card.swift */,
-				884E2D561EC5517B003D9D2A /* CardCellViewModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -210,7 +214,6 @@
 				884E2D481EC54766003D9D2A /* ErrorType+Extensions.swift */,
 				884E2D461EC53DC3003D9D2A /* Dynamic.swift */,
 				884E2D351EC411B4003D9D2A /* Array+Shuffle.swift */,
-				884E2D371EC411C3003D9D2A /* UIImage+Downloader.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -236,18 +239,9 @@
 			children = (
 				884E2D401EC43E09003D9D2A /* NetworkClient.swift */,
 				884E2D421EC43E2A003D9D2A /* Photo+Services.swift */,
-				884E2D441EC43E8C003D9D2A /* Photo.swift */,
+				8815273E1EC5B27E00E52B3B /* APIUrls.swift */,
 			);
 			name = Services;
-			sourceTree = "<group>";
-		};
-		884E2D581EC55328003D9D2A /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				884E2D591EC55337003D9D2A /* CellRepresentable.swift */,
-				884E2D5A1EC55337003D9D2A /* CellIdentifiable.swift */,
-			);
-			name = Protocols;
 			sourceTree = "<group>";
 		};
 		8C7FC8530D6B96A666A02D49 /* Frameworks */ = {
@@ -377,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				884E2D0C1EC410C0003D9D2A /* LaunchScreen.storyboard in Resources */,
+				881527471EC5B6A300E52B3B /* Localizable.strings in Resources */,
 				884E2D091EC410C0003D9D2A /* Assets.xcassets in Resources */,
 				884E2D071EC410C0003D9D2A /* Main.storyboard in Resources */,
 			);
@@ -542,15 +537,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				884E2D491EC54766003D9D2A /* ErrorType+Extensions.swift in Sources */,
-				884E2D5B1EC55337003D9D2A /* CellRepresentable.swift in Sources */,
 				884E2D331EC41176003D9D2A /* MemoryGame.swift in Sources */,
 				884E2D361EC411B4003D9D2A /* Array+Shuffle.swift in Sources */,
-				884E2D5C1EC55337003D9D2A /* CellIdentifiable.swift in Sources */,
-				884E2D571EC5517B003D9D2A /* CardCellViewModel.swift in Sources */,
-				884E2D381EC411C3003D9D2A /* UIImage+Downloader.swift in Sources */,
+				881527441EC5B45500E52B3B /* DisplayStrings.swift in Sources */,
 				884E2D021EC410C0003D9D2A /* AppDelegate.swift in Sources */,
-				884E2D451EC43E8C003D9D2A /* Photo.swift in Sources */,
 				884E2D3D1EC4123A003D9D2A /* GameVC.swift in Sources */,
+				8815273F1EC5B27E00E52B3B /* APIUrls.swift in Sources */,
 				884E2D3B1EC41216003D9D2A /* CardCollectionViewCell.swift in Sources */,
 				884E2D471EC53DC4003D9D2A /* Dynamic.swift in Sources */,
 				884E2D311EC4115E003D9D2A /* Card.swift in Sources */,
@@ -591,6 +583,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		881527491EC5B6A300E52B3B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				881527481EC5B6A300E52B3B /* Base */,
+			);
+			name = Localizable.strings;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		884E2D051EC410C0003D9D2A /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

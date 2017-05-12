@@ -10,10 +10,7 @@ import Foundation
 
 
 
-
-
-
-enum PhotoServiceError: Error, CustomStringConvertible {
+enum APIServiceError: Error, CustomStringConvertible {
     case NotImplemented
     case URLParsing
     case JSONStructure
@@ -32,12 +29,11 @@ typealias PhotosResult = ([Card]?, Error?) -> Void
 
 extension Card {
     class func getAllFeedPhotos(completion: @escaping PhotosResult) {
-        guard let url = NSURL(string: "https://api.flickr.com/services/feeds/photos_public.gne?format=json&nojsoncallback=1") else {
-            completion(nil, PhotoServiceError.URLParsing)
+        guard let url = NSURL(string: APIUrls.getImages.returnURL()) else {
+            completion(nil, APIServiceError.URLParsing)
             return
         }
-        
-        NetworkClient.sharedInstance.getURL(url: url) { (result, error) in
+        NetworkClient.sharedInstance.getData(url: url) { (result, error) in
             guard error == nil else {
                 completion(nil, error)
                 return
@@ -54,7 +50,7 @@ extension Card {
                 }
                 completion(photos, nil)
             } else {
-                completion(nil, PhotoServiceError.JSONStructure)
+                completion(nil, APIServiceError.JSONStructure)
             }
         }
     }
