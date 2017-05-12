@@ -105,29 +105,40 @@
                                 </connections>
                             </collectionView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BAh-30-fUF">
-                                <rect key="frame" x="239" y="547" width="100" height="100"/>
+                                <rect key="frame" x="137.5" y="547" width="100" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="4MF-jZ-GvD"/>
                                     <constraint firstAttribute="width" constant="100" id="Kkn-Qn-MgW"/>
                                 </constraints>
                             </imageView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FMO-Yp-9g6">
+                                <rect key="frame" x="130" y="313" width="114" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Play Again."/>
+                                <connections>
+                                    <action selector="didPressPlayButton" destination="NTd-2S-SmN" eventType="touchUpInside" id="KxZ-ON-unX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.026342147435897467" green="0.026342147435897467" blue="0.026342147435897467" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="QRW-wJ-FN6" firstAttribute="top" secondItem="jMA-ZI-WkC" secondAttribute="bottom" constant="20" id="8Dc-aK-bgY"/>
                             <constraint firstItem="fVX-Ow-7Pi" firstAttribute="centerY" secondItem="mta-Nv-QgQ" secondAttribute="centerY" constant="-18" id="8UA-u0-WjQ"/>
                             <constraint firstItem="nXQ-y7-ycP" firstAttribute="centerX" secondItem="mta-Nv-QgQ" secondAttribute="centerX" id="MPe-oe-Hgo"/>
+                            <constraint firstItem="FMO-Yp-9g6" firstAttribute="centerX" secondItem="mta-Nv-QgQ" secondAttribute="centerX" id="UWc-K0-9p5"/>
                             <constraint firstItem="fVX-Ow-7Pi" firstAttribute="centerX" secondItem="mta-Nv-QgQ" secondAttribute="centerX" id="ckI-vt-nIB"/>
                             <constraint firstItem="QRW-wJ-FN6" firstAttribute="top" secondItem="BAh-30-fUF" secondAttribute="bottom" constant="20" id="dxz-GE-Fzt"/>
+                            <constraint firstItem="FMO-Yp-9g6" firstAttribute="centerY" secondItem="mta-Nv-QgQ" secondAttribute="centerY" id="kf6-v4-yAJ"/>
                             <constraint firstItem="nXQ-y7-ycP" firstAttribute="top" secondItem="xSb-kA-R1g" secondAttribute="bottom" constant="-5" id="nTA-25-gfe"/>
                             <constraint firstItem="jMA-ZI-WkC" firstAttribute="leading" secondItem="mta-Nv-QgQ" secondAttribute="leadingMargin" constant="10" id="qRd-Xy-dEI"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="BAh-30-fUF" secondAttribute="trailing" constant="20" id="xuJ-6x-XhO"/>
+                            <constraint firstItem="BAh-30-fUF" firstAttribute="centerX" secondItem="mta-Nv-QgQ" secondAttribute="centerX" id="ucR-Ny-VfM"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="r9X-Q2-Eue"/>
                     <connections>
                         <outlet property="bottomImageView" destination="BAh-30-fUF" id="ise-K5-1g5"/>
                         <outlet property="collectionView" destination="fVX-Ow-7Pi" id="oCz-E9-7vK"/>
+                        <outlet property="playButton" destination="FMO-Yp-9g6" id="R5e-k0-Bdu"/>
                         <outlet property="timerLabel" destination="jMA-ZI-WkC" id="Cca-ON-S7l"/>
                     </connections>
                 </viewController>

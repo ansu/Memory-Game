@@ -105,6 +105,7 @@ class GameViewModelling: NSObject, GameViewModel {
             cardsShown.append(cards[cellIndex])
             self.showCard!(cellIndex)
             if cardsShown.count == cards.count {
+                self.stopGame()
                 self.finishGame!(DisplayStrings.MemoryGame.FINISHED)
                 return
             }
@@ -119,6 +120,11 @@ class GameViewModelling: NSObject, GameViewModel {
         
     }
     
+    private func stopGame(){
+        cards.removeAll()
+        cardsShown.removeAll()
+        nums = [0,1,2,3,4,5,6,7,8]
+    }
     private func showRandomCard() -> Card{
         let arrayKey = Int(arc4random_uniform(UInt32(nums.count)))
         let randNum = nums[arrayKey]

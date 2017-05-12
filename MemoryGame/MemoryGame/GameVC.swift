@@ -18,6 +18,7 @@ class GameVC: BaseVC  {
     @IBOutlet weak var bottomImageView: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var timerLabel: UILabel!
+    @IBOutlet weak var playButton: UIButton!
     
     var presenter : GameViewModel!
     
@@ -32,6 +33,13 @@ class GameVC: BaseVC  {
         presenter?.getImages()
     }
     
+     @IBAction func didPressPlayButton() {
+        self.collectionView.isHidden = false
+        self.playButton.isHidden = true
+        self.timerLabel.isHidden = false
+
+        presenter?.getImages()
+    }
     
     func setupBinding(){
        
@@ -54,6 +62,7 @@ class GameVC: BaseVC  {
         presenter?.startGame = { [weak self] _ in
             self?.bottomImageView.isHidden = false
             self?.timerLabel.isHidden = true
+            
 
         }
         presenter?.showBottomCard = { [weak self] card in
@@ -75,6 +84,8 @@ class GameVC: BaseVC  {
         
         presenter?.finishGame = { [weak self] toastMsg in
             self?.bottomImageView.isHidden = true
+            self?.collectionView.isHidden = true
+            self?.playButton.isHidden = false
             self?.view.makeToast(toastMsg, duration: 1, position: ToastPosition.bottom)
             
         }
@@ -103,11 +114,10 @@ extension GameVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
         return presenter.cards.count
     }
     
-     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cardCell1", for: indexPath) as! CardCollectionViewCell
         let card = presenter.cards[indexPath.row]
         cell.card = card
-
         
         return cell
     }
