@@ -1,9 +1,9 @@
 //
 //  ErrorType+Extensions.swift
-//  NonReactiveMVVM
+//  MemoryGame
 //
-//  Created by Ian Keen on 21/04/2016.
-//  Copyright © 2016 Mustard. All rights reserved.
+//  Created by Kuliza-282 on 11/05/17.
+//  Copyright © 2017 Kuliza-282. All rights reserved.
 //
 
 import Foundation

@@ -127,7 +127,7 @@ class GamePresenterImpl: NSObject, GamePresenter {
 
             
         }else{
-            self.showToast!(DisplayStrings.MemoryGame.FINISHED)
+            self.showToast!(DisplayStrings.MemoryGame.WRONGTAP)
         }
         
         

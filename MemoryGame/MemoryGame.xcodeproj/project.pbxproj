@@ -20,7 +20,7 @@
 		884E2D171EC410C0003D9D2A /* MemoryGameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884E2D161EC410C0003D9D2A /* MemoryGameTests.swift */; };
 		884E2D221EC410C1003D9D2A /* MemoryGameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884E2D211EC410C1003D9D2A /* MemoryGameUITests.swift */; };
 		884E2D311EC4115E003D9D2A /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884E2D301EC4115E003D9D2A /* Card.swift */; };
-		884E2D331EC41176003D9D2A /* MemoryGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884E2D321EC41176003D9D2A /* MemoryGame.swift */; };
+		884E2D331EC41176003D9D2A /* MemoryGameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884E2D321EC41176003D9D2A /* MemoryGameViewModel.swift */; };
 		884E2D361EC411B4003D9D2A /* Array+Shuffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884E2D351EC411B4003D9D2A /* Array+Shuffle.swift */; };
 		884E2D3B1EC41216003D9D2A /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884E2D3A1EC41216003D9D2A /* CardCollectionViewCell.swift */; };
 		884E2D3D1EC4123A003D9D2A /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884E2D3C1EC4123A003D9D2A /* GameVC.swift */; };
@@ -69,7 +69,7 @@
 		884E2D211EC410C1003D9D2A /* MemoryGameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryGameUITests.swift; sourceTree = "<group>"; };
 		884E2D231EC410C1003D9D2A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		884E2D301EC4115E003D9D2A /* Card.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
-		884E2D321EC41176003D9D2A /* MemoryGame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryGame.swift; sourceTree = "<group>"; };
+		884E2D321EC41176003D9D2A /* MemoryGameViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryGameViewModel.swift; sourceTree = "<group>"; };
 		884E2D351EC411B4003D9D2A /* Array+Shuffle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Array+Shuffle.swift"; sourceTree = "<group>"; };
 		884E2D3A1EC41216003D9D2A /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		884E2D3C1EC4123A003D9D2A /* GameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameVC.swift; sourceTree = "<group>"; };
@@ -127,6 +127,8 @@
 		881527401EC5B37F00E52B3B /* Localization */ = {
 			isa = PBXGroup;
 			children = (
+				881527431EC5B45500E52B3B /* DisplayStrings.swift */,
+				881527491EC5B6A300E52B3B /* Localizable.strings */,
 			);
 			name = Localization;
 			sourceTree = "<group>";
@@ -134,7 +136,7 @@
 		882D7C791EC58E1C00CC7AF2 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				884E2D321EC41176003D9D2A /* MemoryGame.swift */,
+				884E2D321EC41176003D9D2A /* MemoryGameViewModel.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -164,8 +166,6 @@
 		884E2D001EC410C0003D9D2A /* MemoryGame */ = {
 			isa = PBXGroup;
 			children = (
-				881527491EC5B6A300E52B3B /* Localizable.strings */,
-				881527431EC5B45500E52B3B /* DisplayStrings.swift */,
 				881527401EC5B37F00E52B3B /* Localization */,
 				882D7C791EC58E1C00CC7AF2 /* ViewModel */,
 				884E2D3F1EC43DF7003D9D2A /* Services */,
@@ -537,7 +537,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				884E2D491EC54766003D9D2A /* ErrorType+Extensions.swift in Sources */,
-				884E2D331EC41176003D9D2A /* MemoryGame.swift in Sources */,
+				884E2D331EC41176003D9D2A /* MemoryGameViewModel.swift in Sources */,
 				884E2D361EC411B4003D9D2A /* Array+Shuffle.swift in Sources */,
 				881527441EC5B45500E52B3B /* DisplayStrings.swift in Sources */,
 				884E2D021EC410C0003D9D2A /* AppDelegate.swift in Sources */,

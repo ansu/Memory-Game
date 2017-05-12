@@ -1,9 +1,9 @@
 //
 //  Dynamic.swift
-//  MVVMExample
+//  MemoryGame
 //
-//  Created by Dino Bartosak on 25/09/16.
-//  Copyright © 2016 Toptal. All rights reserved.
+//  Created by Kuliza-282 on 11/05/17.
+//  Copyright © 2017 Kuliza-282. All rights reserved.
 //
 
 class Dynamic<T> {
