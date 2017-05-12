@@ -26,15 +26,12 @@
 		884E2D3B1EC41216003D9D2A /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884E2D3A1EC41216003D9D2A /* CardCollectionViewCell.swift */; };
 		884E2D3D1EC4123A003D9D2A /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884E2D3C1EC4123A003D9D2A /* GameVC.swift */; };
 		884E2D411EC43E09003D9D2A /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884E2D401EC43E09003D9D2A /* NetworkProvider.swift */; };
-		884E2D431EC43E2A003D9D2A /* Photo+Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884E2D421EC43E2A003D9D2A /* Photo+Services.swift */; };
 		884E2D471EC53DC4003D9D2A /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884E2D461EC53DC3003D9D2A /* Dynamic.swift */; };
 		884E2D491EC54766003D9D2A /* ErrorType+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884E2D481EC54766003D9D2A /* ErrorType+Extensions.swift */; };
 		88AAE42E1EC5DAB40019ABC6 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AAE42D1EC5DAB40019ABC6 /* AppConstants.swift */; };
 		88AAE4311EC5EEC20019ABC6 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AAE4301EC5EEC20019ABC6 /* Navigation.swift */; };
 		88AAE4341EC5EFBC0019ABC6 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AAE4331EC5EFBC0019ABC6 /* Application.swift */; };
-		88AAE4361EC5F6320019ABC6 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AAE4351EC5F6320019ABC6 /* UIViewController+Extensions.swift */; };
 		88AAE4391EC5F7370019ABC6 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AAE4381EC5F7370019ABC6 /* Network.swift */; };
-		88AAE43B1EC5F7990019ABC6 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AAE43A1EC5F7990019ABC6 /* NetworkRequest.swift */; };
 		88AAE4401EC5FB700019ABC6 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AAE43F1EC5FB700019ABC6 /* API.swift */; };
 /* End PBXBuildFile section */
 
@@ -83,15 +80,12 @@
 		884E2D3A1EC41216003D9D2A /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		884E2D3C1EC4123A003D9D2A /* GameVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameVC.swift; sourceTree = "<group>"; };
 		884E2D401EC43E09003D9D2A /* NetworkProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
-		884E2D421EC43E2A003D9D2A /* Photo+Services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Photo+Services.swift"; sourceTree = "<group>"; };
 		884E2D461EC53DC3003D9D2A /* Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
 		884E2D481EC54766003D9D2A /* ErrorType+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ErrorType+Extensions.swift"; sourceTree = "<group>"; };
 		88AAE42D1EC5DAB40019ABC6 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		88AAE4301EC5EEC20019ABC6 /* Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		88AAE4331EC5EFBC0019ABC6 /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
-		88AAE4351EC5F6320019ABC6 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		88AAE4381EC5F7370019ABC6 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
-		88AAE43A1EC5F7990019ABC6 /* NetworkRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		88AAE43F1EC5FB700019ABC6 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		BB23CC38874086E35188C5F9 /* Pods_MemoryGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemoryGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC6ABA7A8C83AE474C04EA9B /* Pods_MemoryGameTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemoryGameTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -240,7 +234,6 @@
 				884E2D481EC54766003D9D2A /* ErrorType+Extensions.swift */,
 				884E2D461EC53DC3003D9D2A /* Dynamic.swift */,
 				884E2D351EC411B4003D9D2A /* Array+Shuffle.swift */,
-				88AAE4351EC5F6320019ABC6 /* UIViewController+Extensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -268,8 +261,6 @@
 				88AAE4371EC5F71A0019ABC6 /* Network */,
 				88AAE4321EC5EFAE0019ABC6 /* Applications */,
 				88AAE42F1EC5EEAE0019ABC6 /* Navigations */,
-				884E2D421EC43E2A003D9D2A /* Photo+Services.swift */,
-				8815273E1EC5B27E00E52B3B /* APIUrls.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -301,9 +292,9 @@
 		88AAE4371EC5F71A0019ABC6 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				8815273E1EC5B27E00E52B3B /* APIUrls.swift */,
 				884E2D401EC43E09003D9D2A /* NetworkProvider.swift */,
 				88AAE4381EC5F7370019ABC6 /* Network.swift */,
-				88AAE43A1EC5F7990019ABC6 /* NetworkRequest.swift */,
 			);
 			name = Network;
 			sourceTree = "<group>";
@@ -613,12 +604,10 @@
 				884E2D361EC411B4003D9D2A /* Array+Shuffle.swift in Sources */,
 				881527441EC5B45500E52B3B /* DisplayStrings.swift in Sources */,
 				88AAE4341EC5EFBC0019ABC6 /* Application.swift in Sources */,
-				88AAE4361EC5F6320019ABC6 /* UIViewController+Extensions.swift in Sources */,
 				884E2D021EC410C0003D9D2A /* AppDelegate.swift in Sources */,
 				884E2D3D1EC4123A003D9D2A /* GameVC.swift in Sources */,
 				8815273F1EC5B27E00E52B3B /* APIUrls.swift in Sources */,
 				884E2D3B1EC41216003D9D2A /* CardCollectionViewCell.swift in Sources */,
-				88AAE43B1EC5F7990019ABC6 /* NetworkRequest.swift in Sources */,
 				8815274B1EC5C1BD00E52B3B /* BaseVC.swift in Sources */,
 				88AAE4401EC5FB700019ABC6 /* API.swift in Sources */,
 				884E2D471EC53DC4003D9D2A /* Dynamic.swift in Sources */,
@@ -627,7 +616,6 @@
 				88AAE4391EC5F7370019ABC6 /* Network.swift in Sources */,
 				88AAE4311EC5EEC20019ABC6 /* Navigation.swift in Sources */,
 				884E2D411EC43E09003D9D2A /* NetworkProvider.swift in Sources */,
-				884E2D431EC43E2A003D9D2A /* Photo+Services.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
