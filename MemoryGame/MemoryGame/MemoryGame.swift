@@ -26,8 +26,10 @@ protocol GamePresenter {
     var didError: ((Error) -> Void)? { get set }
     var didUpdate: (() -> Void)? { get set }
     var showBottomCard:((Card) -> Void)? { get set }
-
-    //var hideCards:(()->Void)? { get set }
+    var showCard:((Int) -> Void)? {get set }
+    var showToast:((String) -> Void)? {get set }
+    var finishGame:((String) -> Void)? {get set }
+    
 
 }
 
@@ -36,13 +38,19 @@ class GamePresenterImpl: NSObject, GamePresenter {
     
     private(set) var cards :[Card] = [Card]()
     private(set) var isLoading : Dynamic<Bool> = Dynamic(false)
-    var didError: ((Error) -> Void)?
-    var didUpdate: (() -> Void)?
-    var showBottomCard:((Card) -> Void)?
+   
     private var activeCard:Card?
     private var startTime:NSDate?
     private var timer:Timer?
     private var nums = [0,1,2,3,4,5,6,7,8]
+    private var cardsShown:[Card] = [Card]()
+    
+    var didError: ((Error) -> Void)?
+    var didUpdate: (() -> Void)?
+    var showBottomCard:((Card) -> Void)?
+    var showCard:((Int) -> Void)?
+    var showToast:((String) -> Void)?
+    var finishGame:((String) -> Void)?
 
 
     func startGame() {
@@ -107,11 +115,22 @@ class GamePresenterImpl: NSObject, GamePresenter {
 
     func didSelectCard(cellIndex:Int) {
         
-        print("index \(cellIndex)")
-        if (activeCard?.equals(card: cards[cellIndex]))!{
-            print("Done")
+        
+        if activeCard != nil && (activeCard?.equals(card: cards[cellIndex]))!{
+            
+            cards[cellIndex].shown = true
+            cardsShown.append(cards[cellIndex])
+            self.showCard!(cellIndex)
+            if cardsShown.count == cards.count {
+                self.finishGame!("Finished")
+                return
+            }
+            self.activeCard = self.showRandomCard()
+            self.showBottomCard!(self.activeCard!)
+
+            
         }else{
-            print("sorry")
+            self.showToast!("Wrong Tap")
         }
         
         

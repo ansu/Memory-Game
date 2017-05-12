@@ -9,16 +9,15 @@
 
 import UIKit
 import Kingfisher
+import Toast_Swift
 
-class GameVC: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
+class GameVC: UIViewController  {
     
     // MARK: Properties
     
     @IBOutlet weak var bottomImageView: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var timerLabel: UILabel!
-//    var timerFlag:Bool = true
-//    var timer:Timer?
     
     var presenter : GamePresenter!
     
@@ -31,11 +30,6 @@ class GameVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         presenter = GamePresenterImpl()
         setupBinding()
         presenter?.getImages()
-        collectionView.delegate = self
-        collectionView.isUserInteractionEnabled = true
-
-       // setupNewGame()
-
     }
     
     
@@ -60,8 +54,23 @@ class GameVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         presenter?.showBottomCard = { [weak self] card in
             self?.showItem(activeCard: card)
         }
-
         
+        presenter?.showCard = { [weak self] cellIndex in
+            let indexPath = NSIndexPath(row: cellIndex, section: 0)
+            let cell = self?.collectionView.cellForItem(at: indexPath as IndexPath) as! CardCollectionViewCell
+            cell.card = self?.presenter.cards[cellIndex]
+        }
+        
+        presenter?.showToast = { [weak self] toastMsg in
+            self?.view.makeToast(toastMsg, duration: 1, position: ToastPosition.bottom)
+
+        }
+        
+        presenter?.finishGame = { [weak self] toastMsg in
+            self?.view.makeToast(toastMsg, duration: 1, position: ToastPosition.bottom)
+            
+        }
+
     }
     
     private func viewModelDidError(error: Error) {
@@ -76,13 +85,13 @@ class GameVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
                                        usingSpringWithDamping: 0.6, initialSpringVelocity: 10.0,
                                        options: [.curveEaseOut], animations: {
                                         self.bottomImageView.isHidden = false
-                                        
                 }, completion: nil)
         }
     
+}
+
+extension GameVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-
-
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
@@ -109,35 +118,15 @@ class GameVC: UIViewController, UICollectionViewDataSource, UICollectionViewDele
         return CGSize(width: itemWidth, height: itemWidth)
         
     }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.row)
-        let cell = collectionView.cellForItem(at: indexPath as IndexPath) as! CardCollectionViewCell
-        
-        //if cell.shown { return }
-        presenter.didSelectCard(cellIndex: indexPath.row)
-//        if let nationalPark = parksDataSource.parkForItemAtIndexPath(indexPath) {
-//            performSegue(withIdentifier: "MasterToDetail", sender: nationalPark)
-//        }
-    }
-
-
-//    
-
-//
-//    
-//    
-//    
-//    
-//    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-//        
-//        print("did select\(indexPath.row)")
-////        let cell = collectionView.cellForItem(at: indexPath as IndexPath) as! CardCollectionViewCell
-////        
-////        if cell.shown { return }
-////        presenter.didSelectCard(cellIndex: indexPath.row)
-////        //gameController.didSelectCard(cell.card, activeCard: activeCard!)
-////        collectionView.deselectItem(at: indexPath as IndexPath, animated:true)
-//    }
 }
+
+extension GameVC : UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter.didSelectCard(cellIndex: indexPath.row)
+   }
+
+}
+
+
+
 
