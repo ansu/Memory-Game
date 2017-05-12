@@ -19,7 +19,7 @@ class GameVC: BaseVC  {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var timerLabel: UILabel!
     
-    var presenter : GamePresenter!
+    var presenter : GameViewModel!
     
     // MARK: - Lifecycle
     
@@ -27,7 +27,7 @@ class GameVC: BaseVC  {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black
-        presenter = GamePresenterImpl()
+        presenter = GameViewModelling()
         setupBinding()
         presenter?.getImages()
     }
@@ -51,8 +51,15 @@ class GameVC: BaseVC  {
             self.collectionView.reloadData()
         }
         
+        presenter?.startGame = { [weak self] _ in
+            self?.bottomImageView.isHidden = false
+            self?.timerLabel.isHidden = true
+
+        }
         presenter?.showBottomCard = { [weak self] card in
-            self?.showItem(activeCard: card)
+            let imageUrl = card.photoUrl!
+            self?.bottomImageView.kf.setImage(with:imageUrl)
+            
         }
         
         presenter?.showCard = { [weak self] cellIndex in
@@ -67,26 +74,21 @@ class GameVC: BaseVC  {
         }
         
         presenter?.finishGame = { [weak self] toastMsg in
+            self?.bottomImageView.isHidden = true
             self?.view.makeToast(toastMsg, duration: 1, position: ToastPosition.bottom)
             
         }
-
+        
+        presenter?.elapsedTime.bindAndFire({ elapsedTime in
+            self.timerLabel.text = elapsedTime
+        })
     }
     
     private func viewModelDidError(error: Error) {
         UIAlertView(title: "Error", message: error.displayString(), delegate: nil, cancelButtonTitle: "OK").show()
     }
    
-    func showItem(activeCard:Card) {
-        //show the selected image
-            let imageUrl = activeCard.photoUrl!
-            self.bottomImageView.kf.setImage(with:imageUrl)
-            UIView.animate(withDuration: 0.33, delay: 0.0,
-                                       usingSpringWithDamping: 0.6, initialSpringVelocity: 10.0,
-                                       options: [.curveEaseOut], animations: {
-                                        self.bottomImageView.isHidden = false
-                }, completion: nil)
-        }
+    
     
 }
 

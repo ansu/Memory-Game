@@ -13,14 +13,12 @@ import UIKit.UIImage
 
 
 
-protocol GamePresenter {
-    func startGame()
-    func stopGame()
+protocol GameViewModel {
     func didSelectCard(cellIndex:Int)
     func getImages()
     var isLoading : Dynamic<Bool> { get }
     var cards:[Card] { get }
-    
+    var elapsedTime : Dynamic<String> { get }
    
     //MARK: - Events
     var didError: ((Error) -> Void)? { get set }
@@ -29,16 +27,17 @@ protocol GamePresenter {
     var showCard:((Int) -> Void)? {get set }
     var showToast:((String) -> Void)? {get set }
     var finishGame:((String) -> Void)? {get set }
-    
+    var startGame:(() ->Void)? { get set }
 
 }
 
 
-class GamePresenterImpl: NSObject, GamePresenter {
+class GameViewModelling: NSObject, GameViewModel {
     
     private(set) var cards :[Card] = [Card]()
     private(set) var isLoading : Dynamic<Bool> = Dynamic(false)
-   
+    private(set) var elapsedTime : Dynamic<String> = Dynamic("")
+
     private var activeCard:Card?
     private var startTime:NSDate?
     private var timer:Timer?
@@ -51,25 +50,9 @@ class GamePresenterImpl: NSObject, GamePresenter {
     var showCard:((Int) -> Void)?
     var showToast:((String) -> Void)?
     var finishGame:((String) -> Void)?
+    var startGame:(() ->Void)?
 
-
-    func startGame() {
-        //print
-        startTime = NSDate.init()
-    }
-    func stopGame() {
-        
-    }
-    
-    var elapsedTime : TimeInterval {
-        get {
-            guard startTime != nil else {
-                return -1
-            }
-            return NSDate().timeIntervalSince(startTime! as Date)
-        }
-    }
-    
+ 
     func getImages() {
         isLoading.value = true
         Card.getAllFeedPhotos { [weak self] (photos, error) in
@@ -81,20 +64,22 @@ class GamePresenterImpl: NSObject, GamePresenter {
             self?.cards = photos!
             self?.didUpdate!()
             self?.startTime = NSDate.init()
-            self?.timer = Timer.scheduledTimer(timeInterval: 1, target: self!, selector: #selector(GamePresenterImpl.mySelector), userInfo: nil, repeats: true)
+            self?.timer = Timer.scheduledTimer(timeInterval: 1, target: self!, selector: #selector(GameViewModelling.mySelector), userInfo: nil, repeats: true)
             
             }
      
         }
     
     func mySelector(){
-        let seconds = String(format:"%.0f",self.elapsedTime)
-        if seconds == "5" {
+        let time = String(format:"%.0f",NSDate().timeIntervalSince(startTime! as Date))
+        elapsedTime.value = String(format:"TIMER: --- %@",time)
+        if time == "10" {
             if timer?.isValid == true {
                 timer?.invalidate()
                 timer = nil
             }
             self.hideAllCards()
+            
             
         }
     }
@@ -105,6 +90,7 @@ class GamePresenterImpl: NSObject, GamePresenter {
                  return card
         }
         self.didUpdate!()
+        self.startGame!()
         self.activeCard = self.showRandomCard()
         self.showBottomCard!(self.activeCard!)
 
