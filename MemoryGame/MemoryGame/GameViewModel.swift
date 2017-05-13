@@ -15,12 +15,16 @@ import UIKit.UIImage
 
 protocol GameViewModel {
     
+    //Input
     func didSelectCard(cellIndex:Int)
     func getImages()
+    
+    
+    //Output
     var isLoading : Dynamic<Bool> { get }
     var cards:[Card] { get }
     var elapsedTime : Dynamic<String> { get }
-   
+    
     //MARK: - Events
     var didError: ((Error) -> Void)? { get set }
     var didUpdate: (() -> Void)? { get set }

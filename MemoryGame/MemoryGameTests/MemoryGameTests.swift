@@ -28,7 +28,7 @@ class MemoryGameTests: XCTestCase {
     
     var network:Network?
     var api:API?
-    var viewModel:GameViewModelling?
+    var viewModel:GameViewModel?
     
     override func setUp() {
         super.setUp()
