@@ -75,18 +75,4 @@ class NetworkProvider: Network {
 
 
 
-//Mock API Provider
-class MockNetworkProvider: Network {
-    
-    // MARK: service methods
-    
-    func makeRequest(request url: NSURL, networkResult:@escaping (AnyObject?, Error?) -> Void) {
-        
-        let tempDict:NSDictionary = ["m":"https://farm5.staticflickr.com/4178/33781741324_6e8b2bd164_m.jpg"]
-        let tempArray = [ ["media":tempDict],["media":tempDict] ]
-        let json :NSDictionary = ["items":tempArray]
-        
-        networkResult(json, nil)
-    }
-    
-}
+

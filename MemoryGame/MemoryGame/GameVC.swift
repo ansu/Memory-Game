@@ -30,12 +30,10 @@ class GameVC: BaseVC  {
         setupBinding()
         viewModel?.getImages()
         
-       
     }
     
     
-    
-     @IBAction func didPressPlayButton() {
+    @IBAction func didPressPlayButton() {
         self.collectionView.isHidden = false
         self.playButton.isHidden = true
         self.timerLabel.isHidden = false
