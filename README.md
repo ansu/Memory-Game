@@ -1,5 +1,7 @@
 # Memory-Game:
-###IOS: A simple memory game app written in Swift.  
+###IOS: A simple memory game app written in Swift.
+
+![Memory Game](https://github.com/ansu/Memory-Game/blob/master/Screenshot.png)
 
 It is a simple memory game where by default 9 images will be shown to the user for 10 seconds. These settings are configurable and can easily be changed through AppConstants file. User has to remember these images in given time. Once 10 seconds pass by, the images will get flipped.  
 
