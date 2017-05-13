@@ -22,7 +22,7 @@ enum APIError: Error, CustomStringConvertible {
     }
 }
 
-class API {
+final class API {
     //MARK: - Private
     private let network: Network
     
@@ -32,7 +32,7 @@ class API {
     }
     
     //MARK: - Public
-    func getAllFeedPhotos(completion:@escaping ([Card]?, Error?) -> Void) {
+    func getAllGamePhotos(completion:@escaping ([Card]?, Error?) -> Void) {
       
         guard let url = NSURL(string: APIUrls.getImages.returnURL()) else {
             completion(nil, APIError.URLParsing)

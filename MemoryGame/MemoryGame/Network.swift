@@ -20,10 +20,6 @@ enum NetworkError: Error, CustomStringConvertible {
     }
 }
 
-protocol NetworkCancelable {
-    func cancel()
-}
-extension URLSessionDataTask: NetworkCancelable { }
 
 protocol Network {
      func makeRequest(request: NSURL, networkResult:@escaping (AnyObject?, Error?) -> Void)

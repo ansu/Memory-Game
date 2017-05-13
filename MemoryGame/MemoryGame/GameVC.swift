@@ -20,7 +20,7 @@ class GameVC: BaseVC  {
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var playButton: UIButton!
     
-    fileprivate var viewModel : GameViewModel!
+    var viewModel : GameViewModel!
     
     // MARK: - Lifecycle
     
@@ -29,11 +29,8 @@ class GameVC: BaseVC  {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        viewModel = GameViewModelling(api: appDelegate.api)
         setupBinding()
         viewModel?.getImages()
-       // let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
        
     }

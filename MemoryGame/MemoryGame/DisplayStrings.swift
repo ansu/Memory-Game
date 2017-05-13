@@ -8,8 +8,9 @@
 
 import Foundation
 
-struct DisplayStrings {
 
+struct DisplayStrings {
+    
     struct MemoryGame {
         static let FINISHED =  NSLocalizedString("Finished", comment: "")
         static let WRONGTAP = NSLocalizedString("Wrong_Tap", comment: "")

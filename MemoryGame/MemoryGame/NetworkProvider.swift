@@ -10,10 +10,6 @@ import Foundation
 import UIKit
 
 
-
-
-
-
 class NetworkProvider: Network {
     
     let session: URLSession
@@ -23,8 +19,8 @@ class NetworkProvider: Network {
         self.session = session
         
     }
-    
-     // MARK: service methods
+
+    // MARK: service methods
     
     func makeRequest(request url: NSURL, networkResult:@escaping (AnyObject?, Error?) -> Void) {
         let request = NSURLRequest(url: url as URL)
@@ -40,7 +36,9 @@ class NetworkProvider: Network {
         task.resume()
     }
     
-        // MARK: helper methods
+    
+    
+    // MARK: helper methods
     
     private func parseJSON(data: NSData, completion: @escaping (AnyObject?, Error?) -> Void) {
         do {
@@ -62,7 +60,7 @@ class NetworkProvider: Network {
         }
     }
     
-    fileprivate func fixedJSONData(_ data: Data) -> Data {
+    private func fixedJSONData(_ data: Data) -> Data {
         guard let jsonString = String(data: data, encoding: String.Encoding.utf8) else { return data }
         let fixedString = jsonString.replacingOccurrences(of: "\\'", with: "'")
         if let fixedData = fixedString.data(using: String.Encoding.utf8) {

@@ -28,6 +28,7 @@
 		884E2D411EC43E09003D9D2A /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884E2D401EC43E09003D9D2A /* NetworkProvider.swift */; };
 		884E2D471EC53DC4003D9D2A /* Dynamic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884E2D461EC53DC3003D9D2A /* Dynamic.swift */; };
 		884E2D491EC54766003D9D2A /* ErrorType+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 884E2D481EC54766003D9D2A /* ErrorType+Extensions.swift */; };
+		88522AD51EC6BE7000111713 /* UIStoryboard+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88522AD41EC6BE7000111713 /* UIStoryboard+Extension.swift */; };
 		88AAE42E1EC5DAB40019ABC6 /* AppConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AAE42D1EC5DAB40019ABC6 /* AppConstants.swift */; };
 		88AAE4311EC5EEC20019ABC6 /* Navigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AAE4301EC5EEC20019ABC6 /* Navigation.swift */; };
 		88AAE4341EC5EFBC0019ABC6 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AAE4331EC5EFBC0019ABC6 /* Application.swift */; };
@@ -82,6 +83,7 @@
 		884E2D401EC43E09003D9D2A /* NetworkProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		884E2D461EC53DC3003D9D2A /* Dynamic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dynamic.swift; sourceTree = "<group>"; };
 		884E2D481EC54766003D9D2A /* ErrorType+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ErrorType+Extensions.swift"; sourceTree = "<group>"; };
+		88522AD41EC6BE7000111713 /* UIStoryboard+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIStoryboard+Extension.swift"; sourceTree = "<group>"; };
 		88AAE42D1EC5DAB40019ABC6 /* AppConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConstants.swift; sourceTree = "<group>"; };
 		88AAE4301EC5EEC20019ABC6 /* Navigation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Navigation.swift; sourceTree = "<group>"; };
 		88AAE4331EC5EFBC0019ABC6 /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				884E2D481EC54766003D9D2A /* ErrorType+Extensions.swift */,
 				884E2D461EC53DC3003D9D2A /* Dynamic.swift */,
 				884E2D351EC411B4003D9D2A /* Array+Shuffle.swift */,
+				88522AD41EC6BE7000111713 /* UIStoryboard+Extension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -607,6 +610,7 @@
 				884E2D021EC410C0003D9D2A /* AppDelegate.swift in Sources */,
 				884E2D3D1EC4123A003D9D2A /* GameVC.swift in Sources */,
 				8815273F1EC5B27E00E52B3B /* APIUrls.swift in Sources */,
+				88522AD51EC6BE7000111713 /* UIStoryboard+Extension.swift in Sources */,
 				884E2D3B1EC41216003D9D2A /* CardCollectionViewCell.swift in Sources */,
 				8815274B1EC5C1BD00E52B3B /* BaseVC.swift in Sources */,
 				88AAE4401EC5FB700019ABC6 /* API.swift in Sources */,

@@ -6,6 +6,9 @@
 //  Copyright © 2017 Kuliza-282. All rights reserved.
 //
 
+
+///  MG: Generic Binding
+/// Usage: var isLoading : Dynamic<Bool> = Dynamic(false)
 class Dynamic<T> {
     typealias Listener = (T) -> ()
     var listener: Listener?

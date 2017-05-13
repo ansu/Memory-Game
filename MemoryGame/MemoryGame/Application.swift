@@ -11,12 +11,18 @@ import UIKit
 
 class Application {
     //MARK: - Dependencies
-//    private let window: UIWindow
-//   
-   
-//
+    private let window: UIWindow
+    
+    lazy var navigation: Navigation = Navigation(
+        window: self.window,
+        application: self
+    )
+
+    lazy var network = NetworkProvider(session: URLSession.shared)
+    lazy var api: API = API(network:self.network )
+    
 //    //MARK: - Lifecycle
-//    init(window: UIWindow) {
-//        self.window = window
-//    }
+    init(window: UIWindow) {
+        self.window = window
+    }
 }

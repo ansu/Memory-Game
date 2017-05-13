@@ -86,11 +86,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemoryGame/GameVC.swift"
-            timestampString = "516296301.388805"
+            timestampString = "516342675.713886"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
             landmarkName = "setupBinding()"
             landmarkType = "7">
             <Locations>
@@ -102,11 +102,11 @@
                   moduleName = "MemoryGame"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/kuliza-282/Desktop/assign/Memory-Game/MemoryGame/MemoryGame/GameVC.swift"
-                  timestampString = "516295224.564496"
+                  timestampString = "516342525.616925"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "102"
-                  endingLineNumber = "102"
+                  startingLineNumber = "100"
+                  endingLineNumber = "100"
                   offsetFromSymbolStart = "4885">
                </Location>
                <Location
@@ -117,11 +117,11 @@
                   moduleName = "MemoryGame"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/kuliza-282/Desktop/assign/Memory-Game/MemoryGame/MemoryGame/GameVC.swift"
-                  timestampString = "516295224.567066"
+                  timestampString = "516342525.618928"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "102"
-                  endingLineNumber = "102"
+                  startingLineNumber = "100"
+                  endingLineNumber = "100"
                   offsetFromSymbolStart = "265">
                </Location>
             </Locations>

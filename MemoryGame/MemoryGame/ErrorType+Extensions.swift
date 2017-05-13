@@ -13,6 +13,11 @@ protocol LocalizedError {
 }
 extension NSError: LocalizedError { }
 
+
+//MG: one of the two cases above will always be satisfied... this is just here to apease the compiler :(
+// a side effect of Apple making NSError conform to ErrorType - without a protocol such as LocalizedError
+// we are unable to make the compiler tell them apart (hence why the 'as' cast below just works)
+
 extension Error {
     func displayString() -> String {
         if let error = self as? LocalizedError {
@@ -21,11 +26,6 @@ extension Error {
             return error.description
         }
         
-        /*
-         one of the two cases above will always be satisfied... this is just here to apease the compiler :(
-         a side effect of Apple making NSError conform to ErrorType - without a protocol such as LocalizedError
-         we are unable to make the compiler tell them apart (hence why the 'as' cast below just works)
-         */
         return (self as NSError).description
     }
 }

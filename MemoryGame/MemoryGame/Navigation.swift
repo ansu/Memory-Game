@@ -11,34 +11,24 @@ import UIKit
 
 class Navigation {
     //MARK: - Private
-//    private let application: Application
-//    
-//    //MARK: - Lifecycle
-//    init(window: UIWindow, application: Application) {
-//        self.application = application
-//        window.rootViewController = self.showFriendList()
-//        window.makeKeyAndVisible()
-//    }
-//    
+    private let application: Application
+    private let window: UIWindow
+    //MARK: - Lifecycle
+    init(window: UIWindow, application: Application) {
+        self.application = application
+        self.window = window
+    }
+
+    
+    
 //    //MARK: - Public
-//    func start() {
-//        self.showFriendList()
-//    }
-//    
-//    //MARK: - Private
-////    private func showFriendList() -> UIViewController {
-////        let viewModel = GameViewModelling()
-////        
-//////        let viewModel = FriendsListViewModel(
-//////            api: self.application.api,
-//////            imageCache: self.application.imageCache
-//////        )
-//////        viewModel.didSelectFriend = { [weak self] friend in
-//////            self?.showFriend(friend)
-//////        }
-//////        
-////       // let instance = GameVC()
-////        return instance
-////    }
+    func start() {
+        let viewModel = GameViewModelling(api: self.application.api)
+        let instance = UIStoryboard.mainStoryboard?.instantiateVC(GameVC.self)
+        instance?.viewModel = viewModel
+        self.window.rootViewController = instance
+        self.window.makeKeyAndVisible()
+      
+    }
    
 }

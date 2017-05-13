@@ -14,6 +14,7 @@ import UIKit.UIImage
 
 
 protocol GameViewModel {
+    
     func didSelectCard(cellIndex:Int)
     func getImages()
     var isLoading : Dynamic<Bool> { get }
@@ -61,7 +62,7 @@ class GameViewModelling: NSObject, GameViewModel {
  
     func getImages() {
         isLoading.value = true
-        self.api.getAllFeedPhotos { [weak self] (photos, error) in
+        self.api.getAllGamePhotos { [weak self] (photos, error) in
             self?.isLoading.value = false
             guard error == nil else {
                 self?.didError?(error!)
@@ -73,7 +74,7 @@ class GameViewModelling: NSObject, GameViewModel {
             self?.timer = Timer.scheduledTimer(timeInterval: 1, target: self!, selector: #selector(GameViewModelling.elapsedTimer), userInfo: nil, repeats: true)
             }
      
-        }
+    }
     
     func elapsedTimer(){
         let time = String(format:"%.0f",NSDate().timeIntervalSince(startTime! as Date))
@@ -94,14 +95,7 @@ class GameViewModelling: NSObject, GameViewModel {
         }
     }
     
-    private func hideAllCards(){
-        hiddenCards = cards.clone()
-        cards = cards.map{ (card:Card) -> Card in
-                 card.shown = false
-                 return card
-        }
-    }
-
+   
     func didSelectCard(cellIndex:Int) {
         
         if activeCard != nil && (activeCard?.equals(card: cards[cellIndex]))!{
@@ -124,11 +118,21 @@ class GameViewModelling: NSObject, GameViewModel {
         
     }
     
+    private func hideAllCards(){
+        hiddenCards = cards.clone()
+        cards = cards.map{ (card:Card) -> Card in
+            card.shown = false
+            return card
+        }
+    }
+
+    
     private func stopGame(){
         cards.removeAll()
         hiddenCards.removeAll()
         correctCardsCount = 0
     }
+    
     private func generateRandomCard() {
         if hiddenCards.count > 0 {
             let arrayKey = Int(arc4random_uniform(UInt32(hiddenCards.count)))
