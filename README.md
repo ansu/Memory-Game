@@ -10,8 +10,9 @@ After that, at bottom one of the 9 images will be presented and user has to iden
 
 
 ## Installation:
-1: Run Pod Update
-2: Open the xcworkspace file.
+1: Run Pod Update  
+2: Open the xcworkspace file.  
+3: Compile the project.  
 
 
 ## Libary Used
