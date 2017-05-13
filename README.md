@@ -1,9 +1,9 @@
 # Memory-Game:
 ###IOS: A simple memory game app written in Swift.  
 
-It is a simple memory game where by default user will see 9 images in a grid View for 10 seconds. These settings are configurable and can easily be changed through AppConstants file. User has to remember these images in given time. Once 10 seconds pass by, the images will get flipped.  
+It is a simple memory game where by default 9 images will be shown to the user for 10 seconds. These settings are configurable and can easily be changed through AppConstants file. User has to remember these images in given time. Once 10 seconds pass by, the images will get flipped.  
 
-After that, at bottom one of the 9 images will be presented and user has to identify the correct image on the grid. The game ends when user will identify all 9 correct images.
+After that, at bottom one of the 9 images will be presented and user has to identify the correct image on the grid. The game ends when user will identify all the 9 correct images.
 
 
 
