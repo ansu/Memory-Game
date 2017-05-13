@@ -82,7 +82,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemoryGame/GameVC.swift"
@@ -95,33 +95,33 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "MemoryGame.GameVC.setupBinding () -&gt; ()"
                   moduleName = "MemoryGame"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/kuliza-282/Desktop/assign/Memory-Game/MemoryGame/MemoryGame/GameVC.swift"
-                  timestampString = "516342525.616925"
+                  timestampString = "516345868.639346"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "100"
-                  endingLineNumber = "100"
-                  offsetFromSymbolStart = "4885">
+                  startingLineNumber = "96"
+                  endingLineNumber = "96"
+                  offsetFromSymbolStart = "4976">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "MemoryGame.GameVC.(setupBinding () -&gt; ()).(closure #9)"
                   moduleName = "MemoryGame"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/kuliza-282/Desktop/assign/Memory-Game/MemoryGame/MemoryGame/GameVC.swift"
-                  timestampString = "516342525.618928"
+                  timestampString = "516345868.642427"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "100"
-                  endingLineNumber = "100"
+                  startingLineNumber = "96"
+                  endingLineNumber = "96"
                   offsetFromSymbolStart = "265">
                </Location>
             </Locations>

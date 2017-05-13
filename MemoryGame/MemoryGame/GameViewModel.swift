@@ -47,7 +47,6 @@ class GameViewModelling: NSObject, GameViewModel {
     
     private let api: API
 
-   
     var didError: ((Error) -> Void)?
     var didUpdate: (() -> Void)?
     var showBottomCard:((Card) -> Void)?
@@ -69,7 +68,7 @@ class GameViewModelling: NSObject, GameViewModel {
                 return
             }
             self?.cards = photos!
-            self?.didUpdate!()
+            self?.didUpdate?()
             self?.startTime = NSDate.init()
             self?.timer = Timer.scheduledTimer(timeInterval: 1, target: self!, selector: #selector(GameViewModelling.elapsedTimer), userInfo: nil, repeats: true)
             }
@@ -86,10 +85,10 @@ class GameViewModelling: NSObject, GameViewModel {
                 timer = nil
             }
             self.hideAllCards()
-            self.didUpdate!()
-            self.startGame!()
+            self.didUpdate?()
+            self.startGame?()
             self.generateRandomCard()
-            self.showBottomCard!(self.activeCard!)
+            self.showBottomCard?(self.activeCard!)
 
             
         }
@@ -101,18 +100,18 @@ class GameViewModelling: NSObject, GameViewModel {
         if activeCard != nil && (activeCard?.equals(card: cards[cellIndex]))!{
             cards[cellIndex].shown = true
             correctCardsCount += 1
-            self.showCard!(cellIndex)
+            self.showCard?(cellIndex)
             if correctCardsCount == cards.count {
                 self.stopGame()
-                self.finishGame!(DisplayStrings.MemoryGame.FINISHED)
+                self.finishGame?(DisplayStrings.MemoryGame.FINISHED)
                 return
             }
             self.generateRandomCard()
-            self.showBottomCard!(self.activeCard!)
+            self.showBottomCard?(self.activeCard!)
 
             
         }else{
-            self.showToast!(DisplayStrings.MemoryGame.WRONGTAP)
+            self.showToast?(DisplayStrings.MemoryGame.WRONGTAP)
         }
         
         
