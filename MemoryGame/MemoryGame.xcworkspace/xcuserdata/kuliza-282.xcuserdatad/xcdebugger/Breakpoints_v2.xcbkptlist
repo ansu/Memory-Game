@@ -102,7 +102,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemoryGame/NetworkProvider.swift"
@@ -198,7 +198,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemoryGameTests/MemoryGameTests.swift"
@@ -209,12 +209,59 @@
             endingLineNumber = "52"
             landmarkName = "testCardsCount()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MemoryGameTests.MemoryGameTests.testCardsCount () -&gt; ()"
+                  moduleName = "MemoryGameTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kuliza-282/Desktop/assign/Memory-Game/MemoryGame/MemoryGameTests/MemoryGameTests.swift"
+                  timestampString = "516350265.572927"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "398">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MemoryGameTests.MemoryGameTests.(testCardsCount () -&gt; ()).(implicit closure #1)"
+                  moduleName = "MemoryGameTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kuliza-282/Desktop/assign/Memory-Game/MemoryGame/MemoryGameTests/MemoryGameTests.swift"
+                  timestampString = "516350265.574522"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "MemoryGameTests.MemoryGameTests.(testCardsCount () -&gt; ()).(implicit closure #2)"
+                  moduleName = "MemoryGameTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kuliza-282/Desktop/assign/Memory-Game/MemoryGame/MemoryGameTests/MemoryGameTests.swift"
+                  timestampString = "516350265.575989"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemoryGameTests/MemoryGameTests.swift"
@@ -230,7 +277,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemoryGame/API.swift"
@@ -240,6 +287,22 @@
             startingLineNumber = "43"
             endingLineNumber = "43"
             landmarkName = "getAllGamePhotos(completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MemoryGameTests/MemoryGameTests.swift"
+            timestampString = "516350225.928837"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "testCardsIsShown()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

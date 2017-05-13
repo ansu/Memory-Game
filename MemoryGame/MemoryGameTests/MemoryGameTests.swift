@@ -53,6 +53,14 @@ class MemoryGameTests: XCTestCase {
         
     }
     
+    func testCardsIsShown(){
+        viewModel!.getImages()
+        let cards = viewModel!.cards
+        for i in 0...cards.count-1 {
+            let shown = cards[i].shown
+            XCTAssertTrue(shown , "Success")
+        }
+    }
     func testLoadingFlag(){
         viewModel!.getImages()
         let loading = viewModel!.isLoading.value
@@ -66,10 +74,22 @@ class MemoryGameTests: XCTestCase {
         wait(for: waitTime)
         let elapsedTimeValue = viewModel!.elapsedTime.value
         let assertValue = String(format: "TIMER: --- %@", AppConstants.cardsDisplayTime)
-        
         XCTAssertTrue(elapsedTimeValue == assertValue, "Success")
     
     }
+    
+    func testCardsIsHidden(){
+        viewModel!.getImages()
+        let waitTime = Double(AppConstants.cardsDisplayTime) ?? 0.0
+        wait(for: waitTime)
+        let cards = viewModel!.cards
+        for i in 0...cards.count-1 {
+            let shown = cards[i].shown
+            XCTAssertFalse(shown , "Success")
+        }
+    }
+    
+    
     
     
     
