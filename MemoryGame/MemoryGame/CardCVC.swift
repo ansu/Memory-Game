@@ -12,7 +12,7 @@ import Kingfisher
 
 import UIKit.UICollectionViewCell
 
-class CardCollectionViewCell: UICollectionViewCell {
+class CardCVC: UICollectionViewCell {
     
     // MARK: - Properties
     
@@ -35,7 +35,5 @@ class CardCollectionViewCell: UICollectionViewCell {
             
         }
     }
-
-    
     
 }

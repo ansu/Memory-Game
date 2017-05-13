@@ -24,8 +24,6 @@ class GameVC: BaseVC  {
     
     // MARK: - Lifecycle
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.black
@@ -76,7 +74,7 @@ class GameVC: BaseVC  {
         
         viewModel?.showCard = { [weak self] cellIndex in
             let indexPath = NSIndexPath(row: cellIndex, section: 0)
-            let cell = self?.collectionView.cellForItem(at: indexPath as IndexPath) as! CardCollectionViewCell
+            let cell = self?.collectionView.cellForItem(at: indexPath as IndexPath) as! CardCVC
             cell.card = self?.viewModel.cards[cellIndex]
         }
         
@@ -118,7 +116,7 @@ extension GameVC: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cardCell1", for: indexPath) as! CardCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cardCell", for: indexPath) as! CardCVC
         let card = viewModel.cards[indexPath.row]
         cell.card = card
         

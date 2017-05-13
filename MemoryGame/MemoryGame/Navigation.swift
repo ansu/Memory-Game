@@ -18,9 +18,7 @@ class Navigation {
         self.application = application
         self.window = window
     }
-
-    
-    
+   
 //    //MARK: - Public
     func start() {
         let viewModel = GameViewModelling(api: self.application.api)

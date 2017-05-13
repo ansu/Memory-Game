@@ -10,8 +10,7 @@ import Foundation
 
 struct AppConstants {
     
-    
-    static let cardsDisplayTime = "5"
-    static let totalNumberOfCards = 3
+    static let cardsDisplayTime = "10"
+    static let totalNumberOfCards = 9
 
 }
