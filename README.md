@@ -1,4 +1,4 @@
-# Memory-Game
+# Memory-Game:
 IOS: A simple memory game app written in Swift.
 
 It is a simple memory game where by default user will see 9 images in a grid View for 10 seconds. These settings are configurable and can easily be changed in AppConstants file. User has to remember these images in given time. Once 10 seconds pass by, the images will get flipped over.
@@ -7,12 +7,13 @@ After that, at bottom one of the 9 images will be presented and user has to iden
 
 
 
-#Installation
+# Installation:
 1: Run Pod Update
 2: Open the xcworkspace file.
 
 
-#Library Used:
+# Libary Used
+
 1: Kingfisher: Image Caching
 2: Toast : To show messages.
 3: SwiftLint : For enforcing swift rules.
@@ -20,7 +21,7 @@ After that, at bottom one of the 9 images will be presented and user has to iden
 
 This project is mostly based on MVVM design pattern and fully protocol oriented. 
 
-Key Things:
+# Key-Things
 
 1: Network Protocol: This project has two providers for Network protocol. One for live API Data and other for Mock.
 2: Navigations : This class takes care routing and all dependecies which are required for any controller or models.
