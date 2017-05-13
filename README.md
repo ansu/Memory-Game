@@ -7,24 +7,24 @@ After that, at bottom one of the 9 images will be presented and user has to iden
 
 
 
-# Installation:
+## Installation:
 1: Run Pod Update
 2: Open the xcworkspace file.
 
 
-# Libary Used
+## Libary Used
 
-1: Kingfisher: Image Caching
-2: Toast : To show messages.
-3: SwiftLint : For enforcing swift rules.
+1: **Kingfisher:** Image Caching.    
+2: **Toast:** To show messages.    
+3: **SwiftLint:** For enforcing swift rules.  
 
 
-This project is mostly based on MVVM design pattern and fully protocol oriented.   
+##### This project is mostly based on MVVM design pattern and fully protocol oriented.   
 
-# Key-Things
+## Key-Things
 
-1: Network Protocol: This project has two providers for Network protocol. One for live API Data and other for Mock.  
-2: Navigations : This class takes care routing and all dependecies which are required for any controller or models.  
-3: GameVC Controller class takes the data from GameViewModelling. All business logic lies inside GameViewModelling class.  
+1: **Network Protocol:** This project has two providers for Network protocol. One for live API Data and other for Mock.  
+2: **Navigations:** This class takes care routing and all dependecies which are required for any controller or models.  
+3: GameVC class takes the data from GameViewModelling. All business logic lies inside GameViewModelling class.  
 
 
