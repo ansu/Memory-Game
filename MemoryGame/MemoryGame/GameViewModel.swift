@@ -61,6 +61,9 @@ class GameViewModelling: NSObject, GameViewModel {
         self.api = api
     }
  
+    
+    //MG: This Function loads the images from Flicker api and inform the UI for each state
+    // through closures.
     func getImages() {
         isLoading.value = true
         self.api.getAllGamePhotos { [weak self] (photos, error) in
@@ -77,6 +80,8 @@ class GameViewModelling: NSObject, GameViewModel {
      
     }
     
+    // MG: This function checks the elapsed time and once the shown timer conditions match
+    // it's inform controller to update the UI.
     func elapsedTimer(){
         let time = String(format:"%.0f",NSDate().timeIntervalSince(startTime! as Date))
         elapsedTime.value = String(format:"TIMER: --- %@",time)
@@ -97,6 +102,7 @@ class GameViewModelling: NSObject, GameViewModel {
     }
     
    
+    // MG: This function checks selected cell taps.
     func didSelectCard(cellIndex:Int) {
         
         if activeCard != nil && (activeCard?.equals(card: cards[cellIndex]))!{
@@ -119,6 +125,7 @@ class GameViewModelling: NSObject, GameViewModel {
         
     }
     
+    // MG: This function changes the flag true to false in cards.
     private func hideAllCards(){
         hiddenCards = cards.clone()
         cards = cards.map{ (card:Card) -> Card in
@@ -127,13 +134,14 @@ class GameViewModelling: NSObject, GameViewModel {
         }
     }
 
-    
+    // MG: This function cleans all the data of current game..
     private func stopGame(){
         cards.removeAll()
         hiddenCards.removeAll()
         correctCardsCount = 0
     }
     
+    // MG : This function generate Random Card and assign to acive card object.
     private func generateRandomCard() {
         if hiddenCards.count > 0 {
             let arrayKey = Int(arc4random_uniform(UInt32(hiddenCards.count)))
