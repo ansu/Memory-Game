@@ -8,10 +8,14 @@ It is a simple memory game where by default 9 images will be shown to the user f
 After that, at bottom one of the 9 images will be presented and user has to identify the correct image on the grid. The game ends when user will identify all the 9 correct images.
 
 
+# Architecture
 
-## Installation:
-1: Run Pod Update
-2: Open the xcworkspace file.
+### MVVMR = MVVM + VIPER-Router  
+
+1: Mainly uses the structure from MVVM.  
+2: Introduces a component responsible for routing, similar to VIPER.  
+3: Aims to keep everything simple, but modular and reusable.  
+ 
 
 
 ## Libary Used
@@ -21,7 +25,6 @@ After that, at bottom one of the 9 images will be presented and user has to iden
 3: **SwiftLint:** For enforcing swift rules.  
 
 
-##### This project is mostly based on MVVM design pattern and fully protocol oriented.   
 
 ## Key-Things
 
