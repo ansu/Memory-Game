@@ -29,8 +29,20 @@ class MemoryGameUITests: XCTestCase {
     }
     
     func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let collectionViewsQuery = XCUIApplication().collectionViews
+        let cell = collectionViewsQuery.children(matching: .cell).element(boundBy: 0)
+        cell.otherElements.children(matching: .image).element.tap()
+        collectionViewsQuery.children(matching: .cell).element(boundBy: 1).otherElements.children(matching: .image).element.tap()
+        collectionViewsQuery.children(matching: .cell).element(boundBy: 3).images["1_11-128"].tap()
+        collectionViewsQuery.children(matching: .cell).element(boundBy: 4).images["1_11-128"].tap()
+        collectionViewsQuery.children(matching: .cell).element(boundBy: 6).images["1_11-128"].tap()
+        collectionViewsQuery.children(matching: .cell).element(boundBy: 7).images["1_11-128"].tap()
+        collectionViewsQuery.children(matching: .cell).element(boundBy: 8).images["1_11-128"].tap()
+        collectionViewsQuery.children(matching: .cell).element(boundBy: 2).images["1_11-128"].tap()
+        collectionViewsQuery.children(matching: .cell).element(boundBy: 5).images["1_11-128"].tap()
+        cell.images["1_11-128"].tap()
+        
     }
     
 }
