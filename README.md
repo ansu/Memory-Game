@@ -1,5 +1,5 @@
 # Memory-Game:
-###IOS:  A simple memory game app written in Swift.
+###IOS:   A simple memory game app written in Swift.
 
 ![Memory Game](https://github.com/ansu/Memory-Game/blob/master/Screenshot.png)
 
