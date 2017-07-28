@@ -15,6 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var app: Application?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+     BuddyBuildSDK.setup()
+     
      
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.app = Application(window:window)

@@ -8,8 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		110C703D0141A70769A4C169 /* Pods_MemoryGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB23CC38874086E35188C5F9 /* Pods_MemoryGame.framework */; };
+		265F11B6520A781414AAED71 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2195B497BC7CB06698E141C9 /* CoreText.framework */; };
+		29B832873749CCA5BC2F5275 /* BuddyBuildSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 271141BE98D1825CAD4B2B0D /* BuddyBuildSDK.framework */; };
+		3A64D92CA404EFB63F3E2222 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 333257B52C4C3A188C1AFF14 /* QuartzCore.framework */; };
 		5049C521AB9AF7767DEA577D /* Pods_MemoryGameTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC6ABA7A8C83AE474C04EA9B /* Pods_MemoryGameTests.framework */; };
 		60CEB18C288DDBA860EBC0A2 /* Pods_MemoryGameUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38FAA1691884B16C0163F54A /* Pods_MemoryGameUITests.framework */; };
+		62AE3BBBA9DE08E8413A35FC /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B351DC336E8B9B373E7C780E /* CoreMedia.framework */; };
 		8815273F1EC5B27E00E52B3B /* APIUrls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8815273E1EC5B27E00E52B3B /* APIUrls.swift */; };
 		881527441EC5B45500E52B3B /* DisplayStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881527431EC5B45500E52B3B /* DisplayStrings.swift */; };
 		881527471EC5B6A300E52B3B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 881527491EC5B6A300E52B3B /* Localizable.strings */; };
@@ -35,6 +39,11 @@
 		88AAE4341EC5EFBC0019ABC6 /* Application.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AAE4331EC5EFBC0019ABC6 /* Application.swift */; };
 		88AAE4391EC5F7370019ABC6 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AAE4381EC5F7370019ABC6 /* Network.swift */; };
 		88AAE4401EC5FB700019ABC6 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88AAE43F1EC5FB700019ABC6 /* API.swift */; };
+		992E4EA76D556C3CCE6F1B7A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78F1C67BAE4B6BC47770450E /* SystemConfiguration.framework */; };
+		ACEE4EA0D75F92B1B2C2F1EE /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50A7185D889879A57ED5E6A /* AVFoundation.framework */; };
+		CC1683D7C883B61FE4CE3667 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 858BDE7F7ACA9A4354B35054 /* CoreVideo.framework */; };
+		D5858874799762D622EC0B67 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0B3C50D494AFA011021F5A8 /* AssetsLibrary.framework */; };
+		D6BA1035F3554831E55BBD35 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5FEDDECD1947B6EAEF3C74 /* CoreTelephony.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,11 +64,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2195B497BC7CB06698E141C9 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		271141BE98D1825CAD4B2B0D /* BuddyBuildSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BuddyBuildSDK.framework; path = BuddyBuildSDK.framework; sourceTree = "<group>"; };
 		2946F37C90B221AFB2620BF2 /* Pods-MemoryGameTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoryGameTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MemoryGameTests/Pods-MemoryGameTests.debug.xcconfig"; sourceTree = "<group>"; };
+		333257B52C4C3A188C1AFF14 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		38FAA1691884B16C0163F54A /* Pods_MemoryGameUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemoryGameUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F21122CFC331418F5A81D74 /* Pods-MemoryGameUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoryGameUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MemoryGameUITests/Pods-MemoryGameUITests.release.xcconfig"; sourceTree = "<group>"; };
+		540B1EED15AC225013D2E921 /* Bridging-Header.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		5F86D5AF98E67B515004BEAC /* Pods-MemoryGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoryGame.release.xcconfig"; path = "Pods/Target Support Files/Pods-MemoryGame/Pods-MemoryGame.release.xcconfig"; sourceTree = "<group>"; };
 		609D58C846DB037E6B9BAB73 /* Pods-MemoryGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoryGame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MemoryGame/Pods-MemoryGame.debug.xcconfig"; sourceTree = "<group>"; };
+		78F1C67BAE4B6BC47770450E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		858BDE7F7ACA9A4354B35054 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		8815273E1EC5B27E00E52B3B /* APIUrls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIUrls.swift; sourceTree = "<group>"; };
 		881527431EC5B45500E52B3B /* DisplayStrings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DisplayStrings.swift; sourceTree = "<group>"; };
 		881527481EC5B6A300E52B3B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -91,10 +106,14 @@
 		88AAE4331EC5EFBC0019ABC6 /* Application.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Application.swift; sourceTree = "<group>"; };
 		88AAE4381EC5F7370019ABC6 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		88AAE43F1EC5FB700019ABC6 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		A0B3C50D494AFA011021F5A8 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		A50A7185D889879A57ED5E6A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		B351DC336E8B9B373E7C780E /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		BB23CC38874086E35188C5F9 /* Pods_MemoryGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemoryGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC6ABA7A8C83AE474C04EA9B /* Pods_MemoryGameTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MemoryGameTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2AF8CF1C963CFDFC1E4438A /* Pods-MemoryGameUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoryGameUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MemoryGameUITests/Pods-MemoryGameUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		FB19F93511E4FCE0E48D936C /* Pods-MemoryGameTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MemoryGameTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MemoryGameTests/Pods-MemoryGameTests.release.xcconfig"; sourceTree = "<group>"; };
+		FE5FEDDECD1947B6EAEF3C74 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +122,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				110C703D0141A70769A4C169 /* Pods_MemoryGame.framework in Frameworks */,
+				29B832873749CCA5BC2F5275 /* BuddyBuildSDK.framework in Frameworks */,
+				D5858874799762D622EC0B67 /* AssetsLibrary.framework in Frameworks */,
+				265F11B6520A781414AAED71 /* CoreText.framework in Frameworks */,
+				D6BA1035F3554831E55BBD35 /* CoreTelephony.framework in Frameworks */,
+				992E4EA76D556C3CCE6F1B7A /* SystemConfiguration.framework in Frameworks */,
+				3A64D92CA404EFB63F3E2222 /* QuartzCore.framework in Frameworks */,
+				ACEE4EA0D75F92B1B2C2F1EE /* AVFoundation.framework in Frameworks */,
+				62AE3BBBA9DE08E8413A35FC /* CoreMedia.framework in Frameworks */,
+				CC1683D7C883B61FE4CE3667 /* CoreVideo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -174,6 +202,7 @@
 				884E2CFF1EC410C0003D9D2A /* Products */,
 				2367050CA01121483456A091 /* Pods */,
 				8C7FC8530D6B96A666A02D49 /* Frameworks */,
+				540B1EED15AC225013D2E921 /* Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -319,6 +348,15 @@
 				BB23CC38874086E35188C5F9 /* Pods_MemoryGame.framework */,
 				BC6ABA7A8C83AE474C04EA9B /* Pods_MemoryGameTests.framework */,
 				38FAA1691884B16C0163F54A /* Pods_MemoryGameUITests.framework */,
+				271141BE98D1825CAD4B2B0D /* BuddyBuildSDK.framework */,
+				A0B3C50D494AFA011021F5A8 /* AssetsLibrary.framework */,
+				2195B497BC7CB06698E141C9 /* CoreText.framework */,
+				FE5FEDDECD1947B6EAEF3C74 /* CoreTelephony.framework */,
+				78F1C67BAE4B6BC47770450E /* SystemConfiguration.framework */,
+				333257B52C4C3A188C1AFF14 /* QuartzCore.framework */,
+				A50A7185D889879A57ED5E6A /* AVFoundation.framework */,
+				B351DC336E8B9B373E7C780E /* CoreMedia.framework */,
+				858BDE7F7ACA9A4354B35054 /* CoreVideo.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -777,11 +815,16 @@
 			baseConfigurationReference = 609D58C846DB037E6B9BAB73 /* Pods-MemoryGame.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MemoryGame/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ansu.MemoryGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -791,11 +834,16 @@
 			baseConfigurationReference = 5F86D5AF98E67B515004BEAC /* Pods-MemoryGame.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = MemoryGame/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ansu.MemoryGame;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
