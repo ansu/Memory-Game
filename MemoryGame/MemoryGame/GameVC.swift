@@ -15,6 +15,7 @@ class GameVC: BaseVC  {
     
     // MARK: Properties
     
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var bottomImageView: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var timerLabel: UILabel!
@@ -29,6 +30,13 @@ class GameVC: BaseVC  {
         self.view.backgroundColor = UIColor.black
         setupBinding()
         viewModel?.getImages()
+        if #available(iOS 10.0, *) {
+            
+            titleLabel.adjustsFontForContentSizeCategory = true
+            timerLabel.adjustsFontForContentSizeCategory = true
+        } else {
+            // Fallback on earlier versions
+        }
         
     }
     
