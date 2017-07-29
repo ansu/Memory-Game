@@ -8,6 +8,8 @@ target 'MemoryGame' do
   pod 'Kingfisher' , '3.6'
   pod 'Toast-Swift', '~> 2.0.0'
   pod 'SwiftLint'
+  pod 'Fabric'
+  pod 'Crashlytics'
   # Pods for MemoryGame
 
   target 'MemoryGameTests' do
