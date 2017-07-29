@@ -86,11 +86,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "MemoryGame/GameVC.swift"
-            timestampString = "516358325.707788"
+            timestampString = "523020519.586678"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "setupBinding()"
             landmarkType = "7">
             <Locations>
