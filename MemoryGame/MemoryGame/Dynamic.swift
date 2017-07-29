@@ -10,7 +10,7 @@
 ///  MG: Generic Binding
 /// Usage: var isLoading : Dynamic<Bool> = Dynamic(false)
 class Dynamic<T> {
-    typealias Listener =  (T) -> ()
+    typealias Listener = (T) -> ()
     var listener: Listener?
     
     func bind(_ listener: Listener?) {
