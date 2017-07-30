@@ -5,4 +5,4 @@ echo "Uploading to Fabric via command line"
 $BUDDYBUILD_WORKSPACE/Pods/Fabric/upload-symbols  -a $CRASHLYTICS_API_KEY -p ios $BUDDYBUILD_PRODUCT_DIR
 
 echo "Uploading to Fabric via run command line"  
-$BUDDYBUILD_WORKSPACE/Pods/Fabric/run -a $CRASHLYTICS_API_KEY -p ios $BUDDYBUILD_PRODUCT_DIR
+$BUDDYBUILD_WORKSPACE/MemoryGame/Pods/Fabric/run -a $CRASHLYTICS_API_KEY -p ios $BUDDYBUILD_PRODUCT_DIR
