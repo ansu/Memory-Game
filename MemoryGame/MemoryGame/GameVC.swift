@@ -32,6 +32,7 @@ class GameVC: BaseVC  {
         viewModel?.getImages()
         if #available(iOS 10.0, *) {
             
+            
             titleLabel.adjustsFontForContentSizeCategory = true
             timerLabel.adjustsFontForContentSizeCategory = true
         } else {
